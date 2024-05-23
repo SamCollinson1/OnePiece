@@ -47,7 +47,7 @@ fetch('OP_names.txt')
         const lines = data.split('\n');
         lines.forEach(line => {
             const parts = line.split('|');
-            if (parts.length === 9) {  // Ensure each line has exactly 9 parts
+            if (parts.length === 9) {
                 const [name, gender, affiliation, devilFruit, age, bounty, height, arc, status] = parts;
                 characters[name.trim()] = {
                     gender: gender.trim(),
@@ -63,7 +63,6 @@ fetch('OP_names.txt')
                 console.warn('Line format incorrect:', line);
             }
         });
-        console.log('Parsed characters:', characters);  // Log the characters object to check if it's correct
         initializePage();
     })
     .catch(error => console.error('Error fetching the characters:', error));
@@ -75,9 +74,9 @@ function initializePage() {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
             option.className = 'option';
-            
+            console.log(character);
             const img = document.createElement('img');
-            img.src = 'images/' + character + '.png';
+            img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
             option.appendChild(img);
             const text = document.createTextNode(' ' + character.charAt(0).toUpperCase() + character.slice(1));
