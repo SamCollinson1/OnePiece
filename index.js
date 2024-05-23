@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.className = 'option';
             
             const img = document.createElement('img');
-            img.src = `images/${character}.png`;
+            img.src = 'images/' + character + '.png';
             img.alt = character;
             img.onerror = function() {
                 console.error(`Image not found: images/${character}.png`);
@@ -99,7 +99,7 @@ function addDetails() {
         var selectedCharacter = inputValue;
         if (selectedCharacter) {
             addedCharacters.push(selectedCharacter);
-            var imgSrc = `images/${selectedCharacter}.png`;
+            var imgSrc = "images/" + selectedCharacter + ".png";
             var table = document.getElementById("table");
             var addRow = table.insertRow();
             var details = characters[selectedCharacter];
