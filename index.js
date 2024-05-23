@@ -75,7 +75,6 @@ function initializePage() {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
             option.className = 'option';
-            console.log(character.toLowerCase());
             const img = document.createElement('img');
             img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
@@ -122,7 +121,6 @@ function addDetails() {
         var selectedCharacter = inputValue;
         if (selectedCharacter) {
             addedCharacters.push(selectedCharacter);
-            console.log(selectedCharacter);
             var imgSrc = "images/" + selectedCharacter.toLowerCase() + ".png";
             var table = document.getElementById("table");
             var addRow = table.insertRow();
@@ -147,8 +145,6 @@ function addDetails() {
                     addCell.innerHTML = data;
                     return;
                 }
-
-                console.log(chosenCharacter[Object.keys(chosenCharacter)[0]][Object.keys(details)[index-1]]);
 
                 // Check if the detail matches with the chosenCharacter
                 if (chosenCharacter) {
@@ -225,8 +221,6 @@ function extractBountyDetails(bountyString) {
 function compareBounties(chosenBounty, detailsBounty) {
     const chosen = extractBountyDetails(chosenBounty);
     const details = extractBountyDetails(detailsBounty);
-    console.log(chosen);
-    console.log(details);
     if (details.letter === "B" && chosen.letter === "M") {
         return "selected";
         
