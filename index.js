@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const img = document.createElement('img');
             img.src = `images/${character}.png`;
             img.alt = character;
+            img.onerror = function() {
+                console.error(`Image not found: images/${character}.png`);
+            };
             option.appendChild(img);
             const text = document.createTextNode(` ${character.charAt(0).toUpperCase() + character.slice(1)}`);
             option.appendChild(text);
@@ -75,6 +78,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
+
 
 function input(event) {
     if (event.key === "Enter") {
