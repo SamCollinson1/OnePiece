@@ -66,11 +66,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.className = 'option';
             
             const img = document.createElement('img');
-            img.src = 'images/' + character + '.png';
+            img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
-            img.onerror = function() {
-                console.error(`Image not found: images/${character}.png`);
-            };
             option.appendChild(img);
             const text = document.createTextNode(` ${character.charAt(0).toUpperCase() + character.slice(1)}`);
             option.appendChild(text);
@@ -99,7 +96,8 @@ function addDetails() {
         var selectedCharacter = inputValue;
         if (selectedCharacter) {
             addedCharacters.push(selectedCharacter);
-            var imgSrc = "images/" + selectedCharacter + ".png";
+            console.log(selectedCharacter);
+            var imgSrc = "images/" + selectedCharacter.toLowerCase() + ".png";
             var table = document.getElementById("table");
             var addRow = table.insertRow();
             var details = characters[selectedCharacter];
