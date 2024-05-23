@@ -89,14 +89,14 @@ table {
 }
 
 .downarrow {
-    background-image: url("OP_photos/downarrow.png");
+    background-image: url("images/downarrow.png");
     background-size: contain;
     background-repeat: no-repeat;
     align-items: center;
 }
 
 .uparrow {
-    background-image:url("OP_photos/uparrow.png");
+    background-image:url("images/uparrow.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
