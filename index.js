@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.className = 'option';
             
             const img = document.createElement('img');
-            img.src = "images/${character}.png";
+            img.src = `images/${character}.png`;
             img.alt = character;
             img.onerror = function() {
                 console.error(`Image not found: images/${character}.png`);
