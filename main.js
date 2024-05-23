@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.className = 'option';
             
             const img = document.createElement('img');
-            img.src = `OP_photos/${character}.png`;
+            img.src = `images/${character}.png`;
             img.alt = character;
             option.appendChild(img);
             const text = document.createTextNode(` ${character.charAt(0).toUpperCase() + character.slice(1)}`);
@@ -95,7 +95,7 @@ function addDetails() {
         var selectedCharacter = inputValue;
         if (selectedCharacter) {
             addedCharacters.push(selectedCharacter);
-            var imgSrc = `OP_photos/${selectedCharacter}.png`;
+            var imgSrc = `images/${selectedCharacter}.png`;
             var table = document.getElementById("table");
             var addRow = table.insertRow();
             var details = characters[selectedCharacter];
