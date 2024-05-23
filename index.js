@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.className = 'option';
             
             const img = document.createElement('img');
-            img.src = `images/${character}.png`;
+            img.src = "images/${character}.png";
             img.alt = character;
             option.appendChild(img);
             const text = document.createTextNode(` ${character.charAt(0).toUpperCase() + character.slice(1)}`);
