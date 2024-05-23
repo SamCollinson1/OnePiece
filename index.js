@@ -74,7 +74,7 @@ function initializePage() {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
             option.className = 'option';
-            console.log(character);
+            console.log(character.toLowerCase());
             const img = document.createElement('img');
             img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
