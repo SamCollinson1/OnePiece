@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Name</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-section"><a href="#">Section 1</a></div>
+        <div class="nav-section"><a href="#">Section 2</a></div>
+        <div class="nav-section"><a href="#">Section 3</a></div>
+    </nav>
+    <div class="input-container">
+        <img id="inputImage" class="input-image" src="" alt="" style="display:none;">
+        <input type="text" id="textAnswer" class="textInput" onkeydown="input(event)" oninput="showDropdown()">
+    </div>
+    <div id="options" class="dropDown" style="display: none;"></div>
+    <table style="width: 60%" id="table">
+        <tr>
+            <th style = "width:8.5%">Character</th>
+            <th>Gender</th>
+            <th style = "width:20%">Affiliation</th>
+            <th>Devil Fruit</th>
+            <th style = "width:6.5%">Age</th>
+            <th style = "width:6.5%">Last Bounty</th>
+            <th style = "width:6.5%">Height</th>
+            <th style = "width:20%">First Saga Shown</th>
+            <th style = "width:10%">Status</th>
+            
+        </tr>
+    </table>
+</body>
+</html>
