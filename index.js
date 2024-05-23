@@ -39,6 +39,7 @@
 //     'Killer': ["Male", "Kid Pirates", "None", 27, "200M", "1m95", "Sabaody Archipelago", "Alive"],
 //     'Doflamingo': ["Male", "Donquixote Pirates", "Paramecia", 41, "340M", "3m05", "Jaya", "Alive"]
 // };
+
 let characters = {};
 
 fetch('OP_names.txt')
