@@ -4,10 +4,10 @@ Aokiji|Male|Marines|Logia|49|0|2m98|Long Ring Long Land|Alive
 Blackbeard|Male|Blackbeard Pirates|Logia|40|2.2B|3m44|Jaya|Alive
 Boa|Female|Kuja|Paramecia|31|80M|1m91|Amazon Lily|Alive
 Brook|Male|Strawhats Pirates|Paramecia|90|83M|2m77|Thriller Bark|Alive
-Buggy|Male|Cross Guild|Paramecia|39|3.2B|1m92|Orange Town|Alive
+Buggy|Male|CrossGuild|Paramecia|39|3.2B|1m92|Orange Town|Alive
 Chopper|Male|Strawhats Pirates|Zoan|17|100|0.9m|Drum Island|Alive
-Crocodile|Male|Cross Guild|Logia|46|81M|2m53|Whiskey Peak|Alive
-Dragon|Male|Revolutionary|None|55|0|2m56|Loguetown|Alive
+Crocodile|Male|CrossGuild|Logia|46|81M|2m53|Whiskey Peak|Alive
+Dragon|Male|Revolutionary|None|55|0|2m56|Logue town|Alive
 Franky|Male|Strawhats Pirates|None|36|394M|2m40|Water 7|Alive
 Garp|Male|Marines|None|78|3B|2m87|Water 7|Alive
 Jinbe|Male|Strawhats Pirates|None|46|1.1B|3m01|Impel Down|Alive
@@ -16,24 +16,74 @@ Kizaru|Male|Marines|Logia|58|3B|3m02|Sabaody Archipelago|Alive
 Kuma|Male|Revolutionary|Paramecia|47|296M|6m89|Thriller Bark|Alive
 Law|Male|Heart Pirates|Paramecia|26|3B|1m91|Sabaody Archipelago|Alive
 Luffy|Male|Strawhats Pirates|Zoan|19|3B|1m74|Romance Dawn|Alive
-Mihawk|Male|Cross Guild|None|43|3.6B|1m98|Baratie|Alive
-Moria|Male|Thriller Bark Pirates|Paramecia|50|320M|6m92|Thriller Bark|Alive
+Mihawk|Male|CrossGuild|None|43|3.6B|1m98|Baratie|Alive
+Moria|Male|ThrillerBark Pirates|Paramecia|50|320M|6m92|Thriller Bark|Alive
 Nami|Female|Strawhats Pirates|None|20|366M|1m70|Romance Dawn|Alive
 Robin|Female|Strawhats Pirates|Paramecia|30|930M|1m88|Whiskey Peak|Alive
 Roger|Male|Roger Pirates|None|53|5.57B|2m74|Romance Dawn|Deceased
-Sabo|Male|Revolutionary|Logia|22|602M|1m87|Post-War Arc|Alive
+Sabo|Male|Revolutionary|Logia|22|602M|1m87|Post-War|Alive
 Sanji|Male|Strawhats Pirates|None|21|1.03B|1m80|Baratie|Alive
 Sengoku|Male|Marines|Zoan|79|0|2m78|Marineford|Alive
-Shanks|Male|Red Hair Pirates|None|39|4.05B|1m99|Romance Dawn|Alive
+Shanks|Male|RedHair Pirates|None|39|4.05B|1m99|Romance Dawn|Alive
 Usopp|Male|Strawhats Pirates|None|19|500M|1m76|Syrup Village|Alive
 Whitebeard|Male|Whitebeard Pirates|Paramecia|72|5.05B|6m66|Marineford|Deceased
 Zoro|Male|Strawhats Pirates|None|21|1.11B|1m81|Romance Dawn|Alive
-Bigmom|Female|Big Mom Pirates|Paramecia|68|4.388B|8m80|Whole Cake Island|Alive
+Bigmom|Female|BigMom Pirates|Paramecia|68|4.388B|8m80|WholeCake Island|Alive
 Kaido|Male|Beast Pirates|Zoan|59|4.611B|7m10|Wano|Deceased
 Fujitora|Male|Marines|Paramecia|54|0|2m70|Dressrosa|Alive
-Katakuri|Male|Big Mom Pirates|Paramecia|48|1.057B|5m09|Whole Cake Island|Alive
+Katakuri|Male|BigMom Pirates|Paramecia|48|1.057B|5m09|WholeCake Island|Alive
 Rayleigh|Male|Roger Pirates|None|78|0|1m88|Sabaody Archipelago|Alive
 Yamato|Female|Beast Pirates|Zoan|28|0|2m63|Wano|Alive
 Koby|Male|Marines|None|18|0|1m67|Romance Dawn|Alive
 Killer|Male|Kid Pirates|None|27|200M|1m95|Sabaody Archipelago|Alive
 Doflamingo|Male|Donquixote Pirates|Paramecia|41|340M|3m05|Jaya|Alive
+Perona|Female|ThrillerBark Pirates|Paramecia|25|0|1m60|Thriller Bark|Alive
+Smoker|Male|Marines|Logia|36|0|2m06|Logue town|Alive
+Marco|Male|Whitebeard Pirates|Zoan|45|1.37B|2m03|Enies Lobby|Alive
+Enel|Male|God’s Army|Logia|39|0|2m66|Skypiea|Alive
+Vergo|Male|Marines|None|41|0|2m51|Punk Hazard|Deceased
+Shiryu|Male|Blackbeard Pirates|None|42|0|3m40|Impel Down|Alive
+Pedro|Male|Minks Tribe|None|82|0|2m33|Zou|Deceased
+Shakuyaku|Female|Kuja|None|64|0|1m86|Sabaody Archipelago|Alive
+Pudding|Female|BigMom Pirates|Paramecia|16|0|1m66|WholeCake Island|Alive
+Reiju|Female|Germa|None|24|0|1m73|WholeCake Island|Alive
+Ichiji|Male|Germa|None|21|0|1m86|WholeCake Island|Alive
+Niji|Male|Germa|None|21|0|1m85|WholeCake Island|Alive
+Yonji|Male|Germa|None|21|0|1m87|WholeCake Island|Alive
+Kaku|Male|CP0|Zoan|25|0|1m93|Water 7|Alive
+Lucci|Male|CP0|Zoan|30|0|2m12|Water 7|Alive
+BonClay|Male|Baroque Works|Paramecia|32|32M|2m38|Impel Down|Alive
+Monet|Female|Donquixote Pirates|Logia|30|0|2m27|Punk Hazard|Deceased
+Caesar|Male|None|Logia|40|300M|3m09|Punk Hazard|Alive
+Magellan|Male|Impel Down|Paramecia|47|0|4m91|Impel Down|Alive
+Ivankov|Male|Revolutionary|Paramecia|53|100M|4m49|Impel Down|Alive
+Vivi|Female|Alabasta Kingdom|None|18|0|1m69|Alabasta|Alive
+Tashigi|Female|Marines|None|23|0|1m70|Logue town|Alive
+Hawkins|Male|Hawkins Pirates|Paramecia|31|320M|2m10|Sabaody Archipelago|Unknown
+Apoo|Male|On Air Pirates|Paramecia|31|350M|2m56|Sabaody Archipelago|Alive
+XDrake|Male|Marines|Zoan|33|222M|2m33|Sabaody Archipelago|Alive
+Urouge|Male|Fallen Monk Pirates|Paramecia|47|108M|3m88|Sabaody Archipelago|Alive
+Capone Bege|Male|Fire Tank Pirates|Paramecia|42|350M|1m66|Sabaody Archipelago|Alive
+Kuro|Male|Black Cat Pirates|None|35|16M|2m07|Syrup Village|Alive
+Krieg|Male|Krieg Pirates|None|44|17M|2m43|Baratie|Alive
+Arlong|Male|Arlong Pirates|None|41|20M|2m63|Arlong Park|Alive
+Wapol|Male|Black Drum Kingdom|None|29|0|2m07|Drum Island|Alive
+Bellamy|Male|Donquixote Pirates|Paramecia|27|195M|2m40|Jaya|Alive
+Bartolomeo|Male|Strawhat GrandFleet|Paramecia|24|200M|2m20|Dressrosa|Alive
+Cavendish|Male|Strawhat GrandFleet|None|26|330M|2m08|Dressrosa|Alive
+Hody Jones|Male|New Fishman Pirates|None|30|0|3m31|Fishman Island|Alive
+Rebecca|Female|Dressrosa Kingdom|None|16|0|1m71|Dressrosa|Alive
+Carrot|Female|Minks tribe|None|15|0|1m61|Zou|Alive
+Nekomamushi|Male|Minks tribe|None|40|0|5m22|Zou|Alive
+Inuarashi|Male|Minks tribe|None|40|0|5m11|Zou|Alive
+Oden|Male|Kozuki Famil|None|39|0|3m82|Wano|Deceased
+Kanjuro|Male|Kurozumi Family|Paramecia|41|0|3m10|Wano|Deceased
+Kin'emon|Male|Kozuki Family|None|36|0|2m77|Punk Hazard|Alive
+Denjiro|Male|Kozuki Family|None|47|0|3m06|Wano|Alive
+Kozuki Momonosuke|Male|Kozuki Family|None|8|0|1m41|Wano|Alive
+Hiyori|Female|Kozuki Family|None|26|0|1m70|Wano|Alive
+Kiku|Female|Kozuki Family|None|22|0|2m87|Wano|Alive
+Kawamatsu|Male|Kozuki Family|None|41|0|2m71|Wano|Alive
+Ashura|Male|Kozuki Family|None|56|0|5m44|Wano|Deceased
+Shinobu|Female|Kozuki Family|Paramecia|49|0|1m80|Wano|Alive
+Izou|Male|KWhitebeard Pirates|None|45|510M|1m92|Wano|Deceased
