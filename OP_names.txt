@@ -52,7 +52,7 @@ Niji|Male|Germa|None|21|0|1m85|WholeCake Island|Alive
 Yonji|Male|Germa|None|21|0|1m87|WholeCake Island|Alive
 Kaku|Male|CP0|Zoan|25|0|1m93|Water 7|Alive
 Lucci|Male|CP0|Zoan|30|0|2m12|Water 7|Alive
-BonClay|Male|Baroque Works|Paramecia|32|32M|2m38|Impel Down|Alive
+Bonclay|Male|Baroque Works|Paramecia|32|32M|2m38|Impel Down|Alive
 Monet|Female|Donquixote Pirates|Logia|30|0|2m27|Punk Hazard|Deceased
 Caesar|Male|None|Logia|40|300M|3m09|Punk Hazard|Alive
 Magellan|Male|Impel Down|Paramecia|47|0|4m91|Impel Down|Alive
