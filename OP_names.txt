@@ -71,16 +71,16 @@ Wapol|Male|Black Drum Kingdom|None|29|0|2m07|Drum Island|Alive
 Bellamy|Male|Donquixote Pirates|Paramecia|27|195M|2m40|Jaya|Alive
 Bartolomeo|Male|Strawhat GrandFleet|Paramecia|24|200M|2m20|Dressrosa|Alive
 Cavendish|Male|Strawhat GrandFleet|None|26|330M|2m08|Dressrosa|Alive
-Hody Jones|Male|New Fishman Pirates|None|30|0|3m31|Fishman Island|Alive
+Hody|Male|New Fishman Pirates|None|30|0|3m31|Fishman Island|Alive
 Rebecca|Female|Dressrosa Kingdom|None|16|0|1m71|Dressrosa|Alive
 Carrot|Female|Minks tribe|None|15|0|1m61|Zou|Alive
 Nekomamushi|Male|Minks tribe|None|40|0|5m22|Zou|Alive
 Inuarashi|Male|Minks tribe|None|40|0|5m11|Zou|Alive
 Oden|Male|Kozuki Famil|None|39|0|3m82|Wano|Deceased
 Kanjuro|Male|Kurozumi Family|Paramecia|41|0|3m10|Wano|Deceased
-Kin'emon|Male|Kozuki Family|None|36|0|2m77|Punk Hazard|Alive
+Kinemon|Male|Kozuki Family|None|36|0|2m77|Punk Hazard|Alive
 Denjiro|Male|Kozuki Family|None|47|0|3m06|Wano|Alive
-Kozuki Momonosuke|Male|Kozuki Family|None|8|0|1m41|Wano|Alive
+Momonosuke|Male|Kozuki Family|None|8|0|1m41|Wano|Alive
 Hiyori|Female|Kozuki Family|None|26|0|1m70|Wano|Alive
 Kiku|Female|Kozuki Family|None|22|0|2m87|Wano|Alive
 Kawamatsu|Male|Kozuki Family|None|41|0|2m71|Wano|Alive
