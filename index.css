@@ -106,3 +106,31 @@ table {
     font-size: 18px; 
     font-weight: bold;
 }
+
+.win-message {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px; /* Padding */
+    margin-bottom: 10px; /* Margin bottom */
+    text-align: center; /* Center-align text */
+    margin-top: 2.5%;
+}
+
+.playAgainButton {
+    background-color: lightcoral; /* Blue button */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center-align text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Margin top */
+    cursor: pointer; /* Cursor pointer */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 45%;
+}
+
+.win-message button:hover {
+    background-color: #005f7f; /* Darker blue on hover */
+}

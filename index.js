@@ -1,46 +1,5 @@
-// const characters = {
-//     'Ace': ["Male", "Whitebeard Pirates", "Logia", 20, "550M", "1m85", "Alabasta", "Deceased"],
-//     'Akainu': ["Male", "Marines", "Logia", 55, 0, "3m06", "Enies Lobby", "Alive"],
-//     'Aokiji': ["Male", "Marines", "Logia", 49, 0, "2m98", "Long Ring Long Land", "Alive"],
-//     'Blackbeard': ["Male", "Blackbeard Pirates", "Logia", 40, "2.2B", "3m44", "Jaya", "Alive"],
-//     'Boa': ["Female", "Kuja", "Paramecia", 31, "80M", "1m91", "Amazon Lily", "Alive"],
-//     'Brook': ["Male", "Strawhats Pirates", "Paramecia", 90, "83M", "2m77", "Thriller Bark", "Alive"],
-//     'Buggy': ["Male", "Cross Guild", "Paramecia", 39, "3.2B", "1m92", "Orange Town", "Alive"],
-//     'Chopper': ["Male", "Strawhats Pirates", "Zoan", 17, "100", "0.9m", "Drum Island", "Alive"],
-//     'Crocodile': ["Male", "Cross Guild", "Logia", 46, "81M", "2m53", "Whiskey Peak", "Alive"],
-//     'Dragon': ["Male", "Revolutionary", "None", 55, 0, "2m56", "Loguetown", "Alive"],
-//     'Franky': ["Male", "Strawhats Pirates", "None", 36, "394M", "2m40", "Water 7", "Alive"],
-//     'Garp': ["Male", "Marines", "None", 78, "3B", "2m87", "Water 7", "Alive"],
-//     'Jinbe': ["Male", "Strawhats Pirates", "None", 46, "1.1B", "3m01", "Impel Down", "Alive"],
-//     'Kid': ["Male", "Kid Pirates", "Paramecia", 23, "3B", "2m05", "Sabaody Archipelago", "Alive"],
-//     'Kizaru': ["Male", "Marines", "Logia", 58, "3B", "3m02", "Sabaody Archipelago", "Alive"],
-//     'Kuma': ["Male", "Revolutionary", "Paramecia", 47, "296M", "6m89", "Thriller Bark", "Alive"],
-//     'Law': ["Male", "Heart Pirates", "Paramecia", 26, "3B", "1m91", "Sabaody Archipelago", "Alive"],
-//     'Luffy': ["Male", "Strawhats Pirates", "Zoan", 19, "3B", "1m74", "Romance Dawn", "Alive"],
-//     'Mihawk': ["Male", "Cross Guild", "None", 43, "3.6B", "1m98", "Baratie", "Alive"],
-//     'Moria': ["Male", "Thriller Bark Pirates", "Paramecia", 50, "320M", "6m92", "Thriller Bark", "Alive"],
-//     'Nami': ["Female", "Strawhats Pirates", "None", 20, "366M", "1m70", "Romance Dawn", "Alive"],
-//     'Robin': ["Female", "Strawhats Pirates", "Paramecia", 30, "930M", "1m88", "Whiskey Peak", "Alive"],
-//     'Roger': ["Male", "Roger Pirates", "None", 53, "5.57B", "2m74", "Romance Dawn", "Deceased"],
-//     'Sabo': ["Male", "Revolutionary", "Logia", 22, "602M", "1m87", "Post-War Arc", "Alive"],
-//     'Sanji': ["Male", "Strawhats Pirates", "None", 21, "1.03B", "1m80", "Baratie", "Alive"],
-//     'Sengoku': ["Male", "Marines", "Zoan", 79, 0, "2m78", "Marineford", "Alive"],
-//     'Shanks': ["Male", "Red Hair Pirates", "None", 39, "4.05B", "1m99", "Romance Dawn", "Alive"],
-//     'Usopp': ["Male", "Strawhats Pirates", "None", 19, "500M", "1m76", "Syrup Village", "Alive"],
-//     'Whitebeard': ["Male", "Whitebeard Pirates", "Paramecia", 72, "5.05B", "6m66", "Marineford", "Deceased"],
-//     'Zoro': ["Male", "Strawhats Pirates", "None", 21, "1.11B", "1m81", "Romance Dawn", "Alive"],
-//     'Bigmom': ["Female", "Big Mom Pirates", "Paramecia", 68, "4.388B", "8m80", "Whole Cake Island", "Alive"],
-//     'Kaido': ["Male", "Beast Pirates", "Zoan", 59, "4.611B", "7m10", "Wano", "Deceased"],
-//     'Fujitora': ["Male", "Marines", "Paramecia", 54, 0, "2m70", "Dressrosa", "Alive"],
-//     'Katakuri': ["Male", "Big Mom Pirates", "Paramecia", 48, "1.057B", "5m09", "Whole Cake Island", "Alive"],
-//     'Rayleigh': ["Male", "Roger Pirates", "None", 78, 0, "1m88", "Sabaody Archipelago", "Alive"],
-//     'Yamato': ["Female", "Beast Pirates", "Zoan", 28, 0, "2m63", "Wano", "Alive"],
-//     'Koby': ["Male", "Marines", "None", 18, 0, "1m67", "Romance Dawn", "Alive"],
-//     'Killer': ["Male", "Kid Pirates", "None", 27, "200M", "1m95", "Sabaody Archipelago", "Alive"],
-//     'Doflamingo': ["Male", "Donquixote Pirates", "Paramecia", 41, "340M", "3m05", "Jaya", "Alive"]
-// };
-
 let characters = {};
+let score = 0;
 
 fetch('OP_names.txt')
     .then(response => response.text())
@@ -100,6 +59,7 @@ function chooseCharacter() {
     chosenCharacterAge = chosenCharacter[characterName].age;
     chosenCharacterHeight = chosenCharacter[characterName].height;
     chosenCharacterBounty = chosenCharacter[characterName].bounty;
+    console.log('Chosen character:', characterName); // For debugging purposes
 }
 
 function input(event) {
@@ -188,6 +148,15 @@ function addDetails() {
                 addCell.textContent = data;
             });
 
+            // Check if the guessed character is the chosen character
+            if (chosenCharacter && selectedCharacter in chosenCharacter) {
+                score += 250;
+                document.getElementById('score').textContent = `Score: ${score}`;
+                showWinMessage(selectedCharacter);
+                createPlayAgainButton();
+                disableInput();
+            }
+
             input.value = "";
             document.getElementById("inputImage").style.display = "none";
             document.getElementById('options').style.display = 'none';
@@ -201,6 +170,77 @@ function addDetails() {
         }
     }
 }
+
+function showWinMessage(character) {
+    var winMessage = document.createElement('div');
+    winMessage.textContent = `Congratulations! You guessed ${character}!`;
+    winMessage.className = 'win-message';
+    var gameArea = document.getElementById('gameArea');
+    var inputBox = document.getElementById('textAnswer');
+    inputBox.insertAdjacentElement('afterend', winMessage); // Insert after the input box
+}
+
+
+
+function createPlayAgainButton() {
+    var playAgainButton = document.createElement('button');
+    playAgainButton.textContent = 'Play Again';
+    playAgainButton.className = 'playAgainButton';
+    playAgainButton.id = 'playAgainButton';
+    playAgainButton.addEventListener('click', resetGame);
+    document.body.insertBefore(playAgainButton, document.getElementById('table'));
+}
+
+function disableInput() {
+    document.getElementById('textAnswer').disabled = true;
+}
+
+function resetGame() {
+    // Change the chosen character
+    chooseCharacter();
+
+    // Clear dynamically added rows from the table
+    var table = document.getElementById('table');
+    for (var i = table.rows.length - 1; i > 0; i--) {
+        table.deleteRow(i);
+    }
+
+
+    // Clear guessed characters from the addedCharacters array
+    addedCharacters = [];
+    // Reset the input field
+    document.getElementById('textAnswer').value = '';
+    // Enable the input field
+    document.getElementById('textAnswer').disabled = false;
+    // Remove the win message if present
+    var winMessage = document.querySelector('.win-message');
+    if (winMessage) {
+        winMessage.remove();
+    }
+    // Reinitialize the dropdown options
+    initializeDropdown();
+
+    // Hide and disable the play again button
+    var playAgainButton = document.getElementById('playAgainButton');
+    playAgainButton.style.display = 'none';
+    playAgainButton.disabled = true;
+}
+
+
+
+
+
+function removeCharacterFromTable(character) {
+    const table = document.getElementById('table');
+    const rows = table.rows;
+    for (let i = 0; i < rows.length; i++) {
+        if (rows[i].cells[1].textContent.trim() === character) {
+            table.deleteRow(i);
+            break; // Exit loop after removing the row
+        }
+    }
+}
+
 
 
 
@@ -217,29 +257,25 @@ function extractBountyDetails(bountyString) {
 }
 
 // Compare bounties taking into account the presence of a symbol (M or B)
-// Compare bounties taking into account the letter (M or B)
 function compareBounties(chosenBounty, detailsBounty) {
     const chosen = extractBountyDetails(chosenBounty);
     const details = extractBountyDetails(detailsBounty);
     if (details.letter === "B" && chosen.letter === "M") {
         return "selected";
-        
-    }else if (details.letter === "M" && chosen.letter === "B") {
+    } else if (details.letter === "M" && chosen.letter === "B") {
         return "chosen";
-        
-    }else if (chosen.letter === details.letter) {
-        if(chosen.numericValue < details.numericValue){
+    } else if (chosen.letter === details.letter) {
+        if (chosen.numericValue < details.numericValue) {
             return "selected";
-        }else if(chosen.numericValue > details.numericValue){
+        } else if (chosen.numericValue > details.numericValue) {
             return "chosen";
         }
-    }else if(details.letter == null && chosen.letter){
+    } else if (details.letter == null && chosen.letter) {
         return "chosen";
-    }else if(chosen.letter == null && details.letter){
+    } else if (chosen.letter == null && details.letter) {
         return "selected";
     }
 }
-
 
 function removeCharacterFromDropdown(character) {
     const optionsContainer = document.getElementById('options');
@@ -250,6 +286,26 @@ function removeCharacterFromDropdown(character) {
         }
     });
 }
+
+function initializeDropdown() {
+    const optionsContainer = document.getElementById('options');
+    optionsContainer.innerHTML = ''; // Clear existing options
+
+    for (const character in characters) {
+        if (characters.hasOwnProperty(character) && !addedCharacters.includes(character)) {
+            const option = document.createElement('div');
+            option.className = 'option';
+            const img = document.createElement('img');
+            img.src = 'images/' + character.toLowerCase() + '.png';
+            img.alt = character;
+            option.appendChild(img);
+            const text = document.createTextNode(' ' + character.charAt(0).toUpperCase() + character.slice(1));
+            option.appendChild(text);
+            optionsContainer.appendChild(option);
+        }
+    }
+}
+
 
 function dropDown(event) {
     var input = document.getElementById('textAnswer');
@@ -295,3 +351,7 @@ document.addEventListener('click', function(event) {
         dropDown(event);
     }
 });
+
+function updateScore(){
+    score = document.getElementById("score");
+}
