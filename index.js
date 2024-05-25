@@ -167,7 +167,7 @@ function addDetails() {
             if (!matchFound) {
                 addRow.cells[1].classList.add("no-match");
             }
-            
+            console.log(remainingGuesses);
             remainingGuesses--;
             if (remainingGuesses === 0) {
                 createPlayAgainButton();
@@ -191,7 +191,7 @@ function createPlayAgainButton() {
     playAgainButton.className = 'playAgainButton';
     playAgainButton.id = 'playAgainButton';
     playAgainButton.addEventListener('click', resetGame);
-    document.body.insertBefore(playAgainButton, document.getElementById('table'));
+    document.body.insertBefore(playAgainButton, document.getElementById('table-container'));
 }
 
 function disableInput() {
