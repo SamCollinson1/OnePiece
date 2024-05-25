@@ -42,7 +42,7 @@ Smoker|Male|Marines|Logia|36|0|2m06|Logue town|Alive
 Marco|Male|Whitebeard Pirates|Zoan|45|1.37B|2m03|Enies Lobby|Alive
 Enel|Male|God’s Army|Logia|39|0|2m66|Skypiea|Alive
 Vergo|Male|Marines|None|41|0|2m51|Punk Hazard|Deceased
-Shiryu|Male|Blackbeard Pirates|None|42|0|3m40|Impel Down|Alive
+Shiryu|Male|Blackbeard Pirates|Paramecia|42|0|3m40|Impel Down|Alive
 Pedro|Male|Minks Tribe|None|82|0|2m33|Zou|Deceased
 Shakuyaku|Female|Kuja|None|64|0|1m86|Sabaody Archipelago|Alive
 Pudding|Female|BigMom Pirates|Paramecia|16|0|1m66|WholeCake Island|Alive
