@@ -1,11 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
-
+/* Default styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-image: url("images/seaBackground.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -21,7 +25,7 @@ body {
 
 .nav-section a {
     display: block;
-    padding: 14px 16px;
+    padding: 1vw; /* Using viewport width units for padding */
     color: white;
     text-decoration: none;
     background-color: #333;
@@ -33,51 +37,93 @@ body {
     color: black;
 }
 
-.textInput {
-    width: 15%;
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Coming Soon', sans-serif; 
-    margin-left: 40%;
-    margin-top: 2.5%;
+/* Input container */
+.input-container {
+    width: 30vw; /* Using viewport width units for width */
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-table, td, th {
-    border: 1px solid black;
+.textInput {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 35%; /* Using percentage for width */
+    font-size: 1vw; /* Using viewport width units for font size */
+    border: 0.2vw solid #ccc; /* Using viewport width units for border */
+    border-radius: 0.5vw; /* Using viewport width units for border radius */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.inputBackground {
+    width: 100%; /* Adjust width for smaller screens */
+    display: block;
+    position: absolute;
+    top: 15%; /* You might need to adjust this positioning based on your design */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    max-width: 50%; /* Ensure the table container doesn't exceed the viewport width */
+    position: absolute;
+    top: 50%; /* You might need to adjust this positioning based on your design */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+/* Adjustments to the table styles if needed */
+table {
+    width: 100%; /* Ensure the table takes up 100% of the container */
     border-collapse: collapse;
 }
 
-th{
+th {
+    text-align: center;
     background-color: #28d7da;
+    
 }
 
-table {
-    margin-top: 15%;
-    margin-left: 20%;
-}
 
+/* Dropdown */
 .dropDown {
-    max-height: 27.5%; /* Adjust this value as needed */
+    width: 80%; /* Adjust width for smaller screens */
+    margin: 0 auto; /* Center dropdown horizontally */
+    max-height: 40vh; /* Adjust max height for smaller screens */
     overflow-y: auto;
     display: none;
-    border: 1px solid #ccc; 
+    border: 0.1vw solid #ccc; /* Using viewport width units for border */
     background-color: white;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
 }
 
 .dropDown .option {
     display: flex;
     align-items: center;
-    padding: 5px;
-    border: 1px solid lightgray;
+    padding: 0.5vw; /* Using viewport width units for padding */
+    border: 0.1vw solid lightgray; /* Using viewport width units for border */
 }
 
 .option img {
-    vertical-align: middle;
-    width: 25%;
-    margin-right: 2%;
+    width: 20%; /* Using viewport width units for image width */
+    margin-right: 2%; /* Using viewport width units for margin */
+}
+
+/* Cell text */
+.cell-text {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 16px; /* Using viewport width units for font size */
+    font-weight: bold;
 }
 
 .match {
@@ -88,49 +134,81 @@ table {
     background-color: #FF3131;
 }
 
-.downarrow {
-    background-image: url("images/downarrow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    align-items: center;
-}
-
-.uparrow {
-    background-image:url("images/uparrow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.cell-text {
-    font-family: "Poetsen One", sans-serif; 
-    font-size: 18px; 
-    font-weight: bold;
-}
-
+/* Win message */
 .win-message {
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
-    padding: 10px; /* Padding */
-    margin-bottom: 10px; /* Margin bottom */
+    padding: 2vw; /* Using viewport width units for padding */
     text-align: center; /* Center-align text */
-    margin-top: 2.5%;
+    position: absolute;
+    top: 30vh; /* Using viewport height units for positioning */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .playAgainButton {
     background-color: lightcoral; /* Blue button */
     border: none; /* No border */
     color: white; /* White text */
-    padding: 10px 20px; /* Padding */
+    padding: 1vw 2vw; /* Using viewport width units for padding */
     text-align: center; /* Center-align text */
     text-decoration: none; /* No underline */
-    display: inline-block; /* Display as inline-block */
-    font-size: 16px; /* Font size */
-    margin-top: 10px; /* Margin top */
+    font-size: 2vw; /* Using viewport width units for font size */
+    position: absolute;
+    top: 40vh; /* Using viewport height units for positioning */
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer; /* Cursor pointer */
-    border-radius: 5px; /* Rounded corners */
-    margin-left: 45%;
+    border-radius: 2vw; /* Using viewport width units for border radius */
 }
 
 .win-message button:hover {
     background-color: #005f7f; /* Darker blue on hover */
 }
+
+/* Lose message */
+.lose-message {
+    position: absolute;
+    top: 25vh; /* Using viewport height units for positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2vw; /* Using viewport width units for padding */
+    background-color: rosybrown;
+    border-radius: 2vw; /* Using viewport width units for border radius */
+}
+
+/* Lose details */
+.lose-details {
+    position: absolute;
+    top: 30vh; /* Using viewport height units for positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2vw; /* Using viewport width units for margin */
+    padding: 2vw; /* Using viewport width units for padding */
+    border-radius: 2vw; /* Using viewport width units for border radius */
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.lose-details .character-image {
+    width: 20%; /* Using viewport width units for width */
+    max-width: 20vw; /* Using viewport width units for max width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 2vw; /* Using viewport width units for margin */
+    border: 0.2vw solid #333; /* Using viewport width units for border */
+}
+
+.detail {
+    flex: 0 0 100%; /* Adjust width for smaller screens */
+    margin: 1vw 0; /* Using viewport width units for margin */
+    border-radius: 1vw; /* Using viewport width units for border radius */
+    text-align: center;
+    padding: 2vw; /* Using viewport width units for padding */
+    background-color: white;
+}
+
+.detail-1, .detail-2, .detail-3 {
+    flex: 0 0 calc(50% - 2vw); /* Adjust width for smaller screens */
+    margin: 1vw; /* Using viewport width units for margin */
+}
+

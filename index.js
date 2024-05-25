@@ -1,5 +1,7 @@
 let characters = {};
 let score = 0;
+let maxGuesses = 6;
+let remainingGuesses = maxGuesses;
 
 fetch('OP_names.txt')
     .then(response => response.text())
@@ -23,7 +25,7 @@ fetch('OP_names.txt')
                 console.warn('Line format incorrect:', line);
             }
         });
-        initializePage();
+        initializePage();        
     })
     .catch(error => console.error('Error fetching the characters:', error));
 
@@ -94,7 +96,7 @@ function addDetails() {
                 details.gender, details.affiliation, details.devilFruit, details.age,
                 details.bounty, details.height, details.arc, details.status
             ];
-
+            
             cellData.forEach((data, index) => {
                 var addCell = addRow.insertCell();
                 addCell.style.textAlign = "center";
@@ -105,7 +107,6 @@ function addDetails() {
                     addCell.innerHTML = data;
                     return;
                 }
-
                 // Check if the detail matches with the chosenCharacter
                 if (chosenCharacter) {
                     if (details[Object.keys(details)[index-1]] === chosenCharacter[Object.keys(chosenCharacter)[0]][Object.keys(details)[index-1]]) {
@@ -158,7 +159,6 @@ function addDetails() {
             }
 
             input.value = "";
-            document.getElementById("inputImage").style.display = "none";
             document.getElementById('options').style.display = 'none';
 
             removeCharacterFromDropdown(selectedCharacter, inputValue);
@@ -166,6 +166,12 @@ function addDetails() {
             // If matchFound is still false after iterating over all details, add a class to the first cell to turn it red
             if (!matchFound) {
                 addRow.cells[1].classList.add("no-match");
+            }
+            
+            remainingGuesses--;
+            if (remainingGuesses === 0) {
+                createPlayAgainButton();
+                showLoseMessage(Object.keys(chosenCharacter)[0]);
             }
         }
     }
@@ -175,11 +181,8 @@ function showWinMessage(character) {
     var winMessage = document.createElement('div');
     winMessage.textContent = `Congratulations! You guessed ${character}!`;
     winMessage.className = 'win-message';
-    var gameArea = document.getElementById('gameArea');
-    var inputBox = document.getElementById('textAnswer');
-    inputBox.insertAdjacentElement('afterend', winMessage); // Insert after the input box
+    document.body.appendChild(winMessage);
 }
-
 
 
 function createPlayAgainButton() {
@@ -193,6 +196,38 @@ function createPlayAgainButton() {
 
 function disableInput() {
     document.getElementById('textAnswer').disabled = true;
+}
+
+function showLoseMessage(character) {
+    var loseMessage = document.createElement('div');
+    loseMessage.textContent = `Out of guesses. The character was ${character}.`;
+    loseMessage.className = 'lose-message';
+    document.body.appendChild(loseMessage);
+    createNewDivForCharacter(character);
+}
+
+function createNewDivForCharacter(character) {
+    var characterDetails = characters[character];
+    var detailsContainer = document.createElement('div');
+    detailsContainer.id = 'loseDetails';
+    detailsContainer.className = 'lose-details';
+
+    var img = document.createElement('img');
+    img.src = 'images/' + character.toLowerCase() + '.png';
+    img.alt = character;
+    img.className = 'character-image';
+    detailsContainer.appendChild(img);
+    
+    for (const key in characterDetails) {
+        if (characterDetails.hasOwnProperty(key)) {
+            var detailDiv = document.createElement('div');
+            detailDiv.className = 'detail';
+            detailDiv.innerHTML = `<span class="detail-value">${characterDetails[key]}</span>`;
+            detailsContainer.appendChild(detailDiv);
+        }
+    }
+
+    document.body.appendChild(detailsContainer);
 }
 
 function resetGame() {
@@ -217,17 +252,26 @@ function resetGame() {
     if (winMessage) {
         winMessage.remove();
     }
+    // Remove the lose message if present
+    var loseMessage = document.querySelector('.lose-message');
+    if (loseMessage) {
+        loseMessage.remove();
+    }
+    var loseDetails = document.getElementById('loseDetails');
+    if (loseDetails) {
+        loseDetails.remove();
+    }
     // Reinitialize the dropdown options
     initializeDropdown();
 
     // Hide and disable the play again button
     var playAgainButton = document.getElementById('playAgainButton');
-    playAgainButton.style.display = 'none';
+    playAgainButton.remove();
     playAgainButton.disabled = true;
+
+    // Reset remaining guesses
+    remainingGuesses = maxGuesses;
 }
-
-
-
 
 
 function removeCharacterFromTable(character) {
@@ -310,7 +354,9 @@ function initializeDropdown() {
 function dropDown(event) {
     var input = document.getElementById('textAnswer');
     var selectedOption = event.target.textContent.trim();
+
     var toUppercase = selectedOption[0].toUpperCase() + selectedOption.slice(1);
+    console.log(toUppercase)
     input.value = toUppercase;
     addDetails();
     document.getElementById('options').style.display = 'none';
