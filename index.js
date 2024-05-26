@@ -30,8 +30,11 @@ fetch('OP_names.txt')
     .catch(error => console.error('Error fetching the characters:', error));
 
 function initializePage() {
+    score = getScore();
+    document.getElementById("score").textContent = `Score: ${score}`;
     const optionsContainer = document.getElementById('options');
     chooseCharacter();
+    document.getElementById("score").textContent = `Score: ${score}`;
     for (const character in characters) {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
@@ -166,6 +169,7 @@ function addDetails() {
             // Check if the guessed character is the chosen character
             if (chosenCharacter && selectedCharacter in chosenCharacter) {
                 score += 250;
+                updateScore(score);
                 document.getElementById('score').textContent = `Score: ${score}`;
                 showWinMessage(selectedCharacter);
                 createPlayAgainButton();
@@ -181,8 +185,8 @@ function addDetails() {
             if (!matchFound) {
                 addRow.cells[1].classList.add("no-match");
             }
-            console.log(remainingGuesses);
             remainingGuesses--;
+            document.getElementById('guesstext').innerHTML = "Guesses Left: " + remainingGuesses;
             if (remainingGuesses === 0) {
                 createPlayAgainButton();
                 showLoseMessage(Object.keys(chosenCharacter)[0]);
@@ -352,7 +356,7 @@ function initializeDropdown() {
     for (const character in characters) {
         if (characters.hasOwnProperty(character) && !addedCharacters.includes(character)) {
             const option = document.createElement('div');
-            option.className = 'option';
+            option.className = 'dropdown';
             const img = document.createElement('img');
             img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
@@ -407,13 +411,34 @@ document.addEventListener('click', function(event) {
     var input = document.getElementById('textAnswer');
     var dataList = document.getElementById('options');
     if (!input.contains(event.target) && !dataList.contains(event.target)) {
-        console.log("offscreen");
         dataList.style.display = 'none';
     } else if (dataList.contains(event.target) || dataList === event.target) { // Update condition to handle click on dataList itself
         dropDown(event); // Pass the event object to dropDown function
     }
 });
 
-function updateScore(){
-    score = document.getElementById("score");
+function updateScore(newScore) {
+    score = newScore;
+    console.log(score);
+    document.getElementById("score").textContent = `Score: ${score}`;
+    saveScore(score); // Save the updated score to Local Storage
+}
+
+
+// Function to save the score to Local Storage
+function saveScore(score) {
+    localStorage.setItem('score', score.toString());
+}
+
+
+// Function to retrieve the score from Local Storage
+function getScore() {
+    return parseInt(localStorage.getItem('score')) || 0; // Parse the score as an integer
+}
+
+function resetScore() {
+    // Clear the stored score in Local Storage
+    localStorage.removeItem('score');
+    // Update the displayed score to zero
+    updateScore(0);
 }

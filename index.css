@@ -1,7 +1,8 @@
-/* Default styles */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 body {
+    font-family: "Poetsen One", sans-serif; 
     margin: 0;
-    font-family: Arial, sans-serif;
     background-image: url("images/seaBackground.png");
     background-repeat:no-repeat;
     background-size:cover;
@@ -237,6 +238,12 @@ th {
 .detail-1, .detail-2, .detail-3 {
     flex: 0 0 calc(50% - 2vw); /* Adjust width for smaller screens */
     margin: 1vw; /* Using viewport width units for margin */
+}
+
+.guesstext{
+    background-color: #4CAF50;
+    padding: 1vw;
+    width: 6vw;
 }
 
 @media screen and (max-width:1100px) {
