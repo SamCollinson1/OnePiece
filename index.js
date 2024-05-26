@@ -3,6 +3,42 @@ let score = 0;
 let maxGuesses = 6;
 let remainingGuesses = maxGuesses;
 
+orderArcs = {
+    1: "Romance Dawn",
+    2: "Orange Town",
+    3: "Syrup Village",
+    4: "Baratie",
+    5: "Arlong Park",
+    6: "Loguetown",
+    7: "Reverse Mountain",
+    8: "Whiskey Peak",
+    9: "Little Garden",
+    10: "Drum Island",
+    11: "Alabasta",
+    12: "Jaya",
+    13: "Skypiea",
+    14: "Long Ring Long Land",
+    15: "Water 7",
+    16: "Enies Lobby",
+    17: "Post-Enies Lobby",
+    18: "Thriller Bark",
+    19: "Sabaody Archipelago",
+    20: "Amazon Lily",
+    21: "Impel Down",
+    22: "Marineford",
+    23: "Post-War",
+    24: "Return to Sabaody",
+    25: "Fish-Man Island",
+    26: "Punk Hazard",
+    27: "Dressrosa",
+    28: "Zou",
+    29: "Whole Cake Island",
+    30: "Reverie",
+    31: "Wano Country"
+}
+
+
+
 fetch('OP_names.txt')
     .then(response => response.text())
     .then(data => {
@@ -68,6 +104,7 @@ let chosenCharacter = null;
 let chosenCharacterAge = null;
 let chosenCharacterHeight = null;
 let chosenCharacterBounty = null;
+let chosenCharacterArc = null;
 
 function chooseCharacter() {
     const characterNames = Object.keys(characters);
@@ -78,6 +115,7 @@ function chooseCharacter() {
     chosenCharacterAge = chosenCharacter[characterName].age;
     chosenCharacterHeight = chosenCharacter[characterName].height;
     chosenCharacterBounty = chosenCharacter[characterName].bounty;
+    chosenCharacterArc = chosenCharacter[characterName].arc;
     console.log('Chosen character:', characterName); // For debugging purposes
 }
 
@@ -135,7 +173,7 @@ function addDetails() {
                         addCell.classList.add("no-match");
                     }
                     // Add arrow classes only to age, bounty, and height cells
-                    if (index === 4 || index === 5 || index === 6) {
+                    if (index === 4 || index === 5 || index === 6 || index === 7) {
                         // Age
                         if (index === 4) {
                             if (chosenCharacterAge < details.age) {
@@ -152,11 +190,30 @@ function addDetails() {
                                 addCell.classList.add('uparrow');
                             }
                         }
+                        
                         // Height
                         if (index === 6) {
                             if (chosenCharacterHeight < details.height) {
                                 addCell.classList.add("downarrow");
                             } else if (chosenCharacterHeight > details.height) {
+                                addCell.classList.add("uparrow");
+                            }
+                        }
+                        if(index === 7){
+                            chosenArcNum = 0;
+                            guessArcNum = 0;
+                            for (var arcNumber in orderArcs) {
+                                if(chosenCharacterArc == orderArcs[arcNumber]){
+                                    chosenArcNum = arcNumber;
+                                }
+                                if(details.arc == orderArcs[arcNumber]){
+                                    guessArcNum = arcNumber;
+                                }
+                                
+                            }
+                            if(chosenArcNum < guessArcNum){
+                                addCell.classList.add("downarrow");
+                            }else if(chosenArcNum > guessArcNum){
                                 addCell.classList.add("uparrow");
                             }
                         }
@@ -193,6 +250,10 @@ function addDetails() {
             }
         }
     }
+}
+
+function checkArc(){
+
 }
 
 function showWinMessage(character) {
@@ -302,9 +363,6 @@ function removeCharacterFromTable(character) {
         }
     }
 }
-
-
-
 
 function extractBountyDetails(bountyString) {
     const numericValue = parseFloat(bountyString);
