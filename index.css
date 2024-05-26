@@ -44,6 +44,7 @@ body {
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center; /* Added text-align to center the input */
 }
 
 .textInput {
@@ -52,7 +53,7 @@ body {
     left: 50%;
     transform: translate(-50%, -70%);
     width: 35%; /* Using percentage for width */
-    font-size: 1vw; /* Using viewport width units for font size */
+    font-size: 16px; /* Using viewport width units for font size */
     border: 0.2vw solid #ccc; /* Using viewport width units for border */
     border-radius: 0.5vw; /* Using viewport width units for border radius */
     background-color: rgba(255, 255, 255, 0.8);
@@ -70,53 +71,66 @@ body {
 /* Table */
 .table-container {
     overflow-x: auto; /* Enable horizontal scrolling */
-    margin-left: auto; /* Center the container horizontally */
-    margin-right: auto; /* Center the container horizontally */
-    max-width: 50%; /* Ensure the table container doesn't exceed the viewport width */
-    position: absolute;
-    top: 50%; /* You might need to adjust this positioning based on your design */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 80%; /* Ensure the table container doesn't exceed the viewport width */
+    margin: 40vh auto 0;
 }
 
 /* Adjustments to the table styles if needed */
 table {
     width: 100%; /* Ensure the table takes up 100% of the container */
     border-collapse: collapse;
+    margin: auto; /* Center the table horizontally within its container */
 }
-
 th {
     text-align: center;
-    background-color: #28d7da;
-    
+    background-color: #FFCA4B;    
 }
 
-
-/* Dropdown */
 .dropDown {
-    width: 80%; /* Adjust width for smaller screens */
-    margin: 0 auto; /* Center dropdown horizontally */
-    max-height: 40vh; /* Adjust max height for smaller screens */
+    width: 38.2%; /* Make the dropdown take the full width of the input container */
+    max-height: 28vh; /* Adjust max height for smaller screens */
     overflow-y: auto;
-    display: none;
     border: 0.1vw solid #ccc; /* Using viewport width units for border */
     background-color: white;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
+    left: 50%;
+    transform: translate(-50%, 2%);
+    overflow-x: hidden;
 }
 
 .dropDown .option {
     display: flex;
     align-items: center;
-    padding: 0.5vw; /* Using viewport width units for padding */
+    font-weight: bold;
+    font-size: 18px;
     border: 0.1vw solid lightgray; /* Using viewport width units for border */
+    flex-direction: row;
 }
 
-.option img {
-    width: 20%; /* Using viewport width units for image width */
-    margin-right: 2%; /* Using viewport width units for margin */
+.option .image-container {
+    top: 50%; /* You might need to adjust this positioning based on your design */
+    left: 50%;
+    transform: translate(-27%, 20%);
+    margin-right: 1vw; /* Set a fixed margin to the right of the image */
+}
+
+.option .image-container img {
+    width: 40%; /* Set a fixed width for the image */
+    object-fit: contain; /* Ensure the image fits within its box */
+}
+
+.option .text-container {
+    transform: translate(19%, -140%);
+    flex: 1; /* Fill remaining space */
+}
+
+.option .text-container span {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Cell text */
@@ -132,6 +146,18 @@ th {
 
 .no-match {
     background-color: #FF3131;
+}
+
+.downarrow {
+    background-image: url("images/downarrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+.uparrow {
+    background-image:url("images/uparrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Win message */
@@ -212,3 +238,16 @@ th {
     margin: 1vw; /* Using viewport width units for margin */
 }
 
+@media screen and (max-width:1100px) {
+    .input-container{
+        width: 80vw;
+        max-width: 400px;
+    }
+    .textInput{
+        width: 30vw;
+        max-width: 150px;
+    }
+    .dropDown{
+        max-height: 27vh;
+    }
+}

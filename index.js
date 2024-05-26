@@ -36,16 +36,30 @@ function initializePage() {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
             option.className = 'option';
+            
+            // Create a div for the image
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'image-container';
             const img = document.createElement('img');
             img.src = 'images/' + character.toLowerCase() + '.png';
             img.alt = character;
-            option.appendChild(img);
+            imageDiv.appendChild(img);
+            
+            // Create a div for the text
+            const textDiv = document.createElement('div');
+            textDiv.className = 'text-container';
             const text = document.createTextNode(' ' + character.charAt(0).toUpperCase() + character.slice(1));
-            option.appendChild(text);
+            textDiv.appendChild(text);
+            
+            // Append image and text divs to the option container
+            option.appendChild(imageDiv);
+            option.appendChild(textDiv);
+            
             optionsContainer.appendChild(option);
         }
     }
 }
+    
 
 let chosenCharacter = null;
 let chosenCharacterAge = null;
@@ -354,12 +368,16 @@ function initializeDropdown() {
 function dropDown(event) {
     var input = document.getElementById('textAnswer');
     var selectedOption = event.target.textContent.trim();
-
-    var toUppercase = selectedOption[0].toUpperCase() + selectedOption.slice(1);
-    console.log(toUppercase)
-    input.value = toUppercase;
-    addDetails();
-    document.getElementById('options').style.display = 'none';
+    if (event.target.tagName === 'IMG') {
+        selectedOption = event.target.alt.trim(); // Get alt attribute of the clicked image
+        
+    }
+    if (selectedOption) {
+        var toUppercase = selectedOption[0].toUpperCase() + selectedOption.slice(1);
+        input.value = toUppercase;
+        addDetails();
+        document.getElementById('options').style.display = 'none';
+    }
 }
 
 function showDropdown() {
@@ -381,20 +399,18 @@ function showDropdown() {
         dataList.style.display = 'none';
     } else {
         dataList.style.display = 'block';
-        dataList.style.position = 'absolute';
-        dataList.style.top = input.offsetTop + input.offsetHeight + 'px';
-        dataList.style.left = input.offsetLeft + 'px';
-        dataList.style.width = input.offsetWidth + 'px';
     }
 }
+
 
 document.addEventListener('click', function(event) {
     var input = document.getElementById('textAnswer');
     var dataList = document.getElementById('options');
-    if (!input.contains(event.target) && !event.target.closest('.option')) {
+    if (!input.contains(event.target) && !dataList.contains(event.target)) {
+        console.log("offscreen");
         dataList.style.display = 'none';
-    } else if (event.target.className === 'option' || event.target.tagName === "IMG") {
-        dropDown(event);
+    } else if (dataList.contains(event.target) || dataList === event.target) { // Update condition to handle click on dataList itself
+        dropDown(event); // Pass the event object to dropDown function
     }
 });
 
