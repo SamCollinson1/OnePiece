@@ -77,7 +77,7 @@ Carrot|Female|Minks tribe|None|15|0|1m61|Zou|Alive
 Nekomamushi|Male|Minks tribe|None|40|0|5m22|Zou|Alive
 Inuarashi|Male|Minks tribe|None|40|0|5m11|Zou|Alive
 Oden|Male|Kozuki Family|None|39|0|3m82|Wano|Deceased
-Kanjuro|Male|Kurozumi Family|Paramecia|41|0|3m10|Wano|Deceased
+Kanjuro|Male|Kurozumi Family|Paramecia|41|0|3m10|Dressrosa|Deceased
 Kinemon|Male|Kozuki Family|None|36|0|2m77|Punk Hazard|Alive
 Denjiro|Male|Kozuki Family|None|47|0|3m06|Wano|Alive
 Momonosuke|Male|Kozuki Family|None|8|0|1m41|Wano|Alive
