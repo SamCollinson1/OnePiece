@@ -9,8 +9,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-section"><a href="#">Section 1</a></div>
-        <div class="nav-section"><a href="#">Section 2</a></div>
+        <div class="nav-section"><a href="#index.html">Wordle</a></div>
+        <div class="nav-section"><a href="#shop.html">Shop</a></div>
         <div class="nav-section"><a href="#">Section 3</a></div>
     </nav>
     <div class="input-container">
@@ -21,6 +21,10 @@
     <div>
         <p class="guesstext" id="guesstext">Guesses Left: 6</p>
         <p class="score" id="score">Score: </p>
+        <button id="revealCategoryBtn" class = "clueButton" onclick="revealClue()">Clue (-50)</button>
+
+        <ul id="cluesList" class = cluesList></ul>
+
     </div>
     <div class="table-container" id="table-container">
         <table style="width: 60%" id="table">

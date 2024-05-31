@@ -165,8 +165,8 @@ th {
 /* Win message */
 .win-message {
     background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    padding: 2vw; /* Using viewport width units for padding */
+    color: black; /* White text */
+    padding: 1vw; /* Using viewport width units for padding */
     text-align: center; /* Center-align text */
     position: absolute;
     top: 30vh; /* Using viewport height units for positioning */
@@ -181,7 +181,7 @@ th {
     padding: 1vw 2vw; /* Using viewport width units for padding */
     text-align: center; /* Center-align text */
     text-decoration: none; /* No underline */
-    font-size: 2vw; /* Using viewport width units for font size */
+    font-size: 1vw; /* Using viewport width units for font size */
     position: absolute;
     top: 40vh; /* Using viewport height units for positioning */
     left: 50%;
@@ -197,53 +197,96 @@ th {
 /* Lose message */
 .lose-message {
     position: absolute;
-    top: 25vh; /* Using viewport height units for positioning */
+    top: 22vh; /* Using viewport height units for positioning */
     left: 50%;
     transform: translateX(-50%);
-    padding: 2vw; /* Using viewport width units for padding */
+    padding: 1vw; /* Using viewport width units for padding */
     background-color: rosybrown;
-    border-radius: 2vw; /* Using viewport width units for border radius */
+    border-radius: 1vw; /* Using viewport width units for border radius */
+    text-align: center;
 }
 
-/* Lose details */
 .lose-details {
     position: absolute;
-    top: 30vh; /* Using viewport height units for positioning */
+    top: 30vh;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 2vw; /* Using viewport width units for margin */
-    padding: 2vw; /* Using viewport width units for padding */
-    border-radius: 2vw; /* Using viewport width units for border radius */
-    display: flex; /* Use flexbox layout */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    display: flex;
+    width: 80vw; /* Adjust the width to fit the content */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    overflow-x: auto; /* Add horizontal scrollbar when content overflows */
+    padding-bottom: 2vw; /* Add bottom padding to accommodate scrollbar */
 }
 
 .lose-details .character-image {
-    width: 20%; /* Using viewport width units for width */
-    max-width: 20vw; /* Using viewport width units for max width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 2vw; /* Using viewport width units for margin */
-    border: 0.2vw solid #333; /* Using viewport width units for border */
+    width: 5vw; /* Adjust the width of the image */
+    max-width: 20vw;
+    height: auto;
+    margin-right: 0.5vw;
+    border: 0.2vw solid #333;
 }
 
+
 .detail {
-    flex: 0 0 100%; /* Adjust width for smaller screens */
-    margin: 1vw 0; /* Using viewport width units for margin */
-    border-radius: 1vw; /* Using viewport width units for border radius */
+    flex-grow: 1; /* Make all detail elements equally flexible */
+    margin: 0.1vw; /* Adjust margin */
+    border-radius: 0.5vw;
     text-align: center;
-    padding: 2vw; /* Using viewport width units for padding */
+    padding: 1vw;
     background-color: white;
 }
 
-.detail-1, .detail-2, .detail-3 {
-    flex: 0 0 calc(50% - 2vw); /* Adjust width for smaller screens */
-    margin: 1vw; /* Using viewport width units for margin */
+.correct {
+    background-color: lightgreen; /* Background color for correct categories */
 }
 
-.guesstext{
+.wrong {
+    background-color: salmon; /* Background color for wrong categories */
+}
+
+.guesstext {
     background-color: #4CAF50;
+    padding: 1vw 2vw;
+    width: 7vw;
+    font-size: 16px;
+}
+
+.score{
+    background-color: aquamarine;
     padding: 1vw;
     width: 6vw;
+    border-radius: 5vw;
+    position: absolute;
+    top: 3.5vw; 
+    left: 95vw;
+    transform: translateX(-50%);
+    text-align: center;
+
+}
+
+.clueButton {
+    background-color: #FFAE42;
+    padding: 1vw 2vw;
+    border: none;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 16px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(160, 20, 0, 0.5); 
+}
+
+.clueButton:hover {
+    background-color: #FF9800; 
+}
+
+.cluesList{
+    background-color: gray;
+}
+
+.clueList{
+    position: absolute;
+    background-color: #FF7F7F;
+    padding: 0.5vw;
 }
 
 @media screen and (max-width:1100px) {
@@ -260,5 +303,11 @@ th {
     }
     .dropDown .option {
         font-size: 14px;
+    }
+    .playAgainButton{
+        font-size: 16px;
+    }
+    .lose-details .character-image {
+        width: 10vw;
     }
 }

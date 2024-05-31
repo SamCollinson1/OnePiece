@@ -2,6 +2,10 @@ let characters = {};
 let score = 0;
 let maxGuesses = 6;
 let remainingGuesses = maxGuesses;
+let totalPenalty = 0;
+let correctCategories = [];
+let wrongCategories = [];
+
 
 orderArcs = {
     1: "Romance Dawn",
@@ -69,6 +73,7 @@ function initializePage() {
     score = getScore();
     document.getElementById("score").textContent = `Score: ${score}`;
     const optionsContainer = document.getElementById('options');
+    optionsContainer.innerHTML = ''; // Clear existing options
     chooseCharacter();
     document.getElementById("score").textContent = `Score: ${score}`;
     for (const character in characters) {
@@ -99,8 +104,8 @@ function initializePage() {
     }
 }
     
-
 let chosenCharacter = null;
+let characterDetails = null;
 let chosenCharacterAge = null;
 let chosenCharacterHeight = null;
 let chosenCharacterBounty = null;
@@ -110,7 +115,7 @@ function chooseCharacter() {
     const characterNames = Object.keys(characters);
     const randomIndex = Math.floor(Math.random() * characterNames.length);
     const characterName = characterNames[randomIndex];
-    const characterDetails = characters[characterName];
+    characterDetails = characters[characterName];
     chosenCharacter = {[characterName]: characterDetails};
     chosenCharacterAge = chosenCharacter[characterName].age;
     chosenCharacterHeight = chosenCharacter[characterName].height;
@@ -151,6 +156,7 @@ function addDetails() {
                 details.gender, details.affiliation, details.devilFruit, details.age,
                 details.bounty, details.height, details.arc, details.status
             ];
+            let correctCount = 0;
             
             cellData.forEach((data, index) => {
                 var addCell = addRow.insertCell();
@@ -168,6 +174,10 @@ function addDetails() {
                         // Set matchFound to true if a match is found
                         matchFound = true;
                         // Add class to the specific cell to turn it green
+                        if(!correctCategories.includes(details[Object.keys(details)[index-1]])){
+                            correctCategories.push(details[Object.keys(details)[index-1]]);
+                        }
+                        correctCount++;
                         addCell.classList.add("match");
                     } else {
                         addCell.classList.add("no-match");
@@ -221,11 +231,11 @@ function addDetails() {
                 }
 
                 addCell.textContent = data;
+                checkCategories()
             });
-
             // Check if the guessed character is the chosen character
             if (chosenCharacter && selectedCharacter in chosenCharacter) {
-                score += 250;
+                score += correctCount * 20;
                 updateScore(score);
                 document.getElementById('score').textContent = `Score: ${score}`;
                 showWinMessage(selectedCharacter);
@@ -247,14 +257,31 @@ function addDetails() {
             if (remainingGuesses === 0) {
                 createPlayAgainButton();
                 showLoseMessage(Object.keys(chosenCharacter)[0]);
+                let penalty = calculatePenalty(details);
+                score -= penalty;
+                updateScore(score);
             }
         }
     }
 }
+function checkCategories() {
+    const details = characterDetails;
 
-function checkArc(){
-
+    // Iterate over each category in the character details
+    for (const [key, val] of Object.entries(details)) {
+        // If the category is not found in correctCategories and not already in wrongCategories, add it to wrongCategories
+        if (!correctCategories.includes(val)) {
+            // Exclude 'status' category from being added to wrongCategories if it is correctly guessed
+                if (!wrongCategories.includes(key)) {
+                    wrongCategories.push(key);
+                }
+        } else {
+            // If the category is found in correctCategories, remove it from wrongCategories if it exists
+            wrongCategories = wrongCategories.filter(item => item !== key);
+        }
+    }
 }
+
 
 function showWinMessage(character) {
     var winMessage = document.createElement('div');
@@ -284,13 +311,12 @@ function showLoseMessage(character) {
     document.body.appendChild(loseMessage);
     createNewDivForCharacter(character);
 }
-
+let space = 10;
 function createNewDivForCharacter(character) {
     var characterDetails = characters[character];
     var detailsContainer = document.createElement('div');
     detailsContainer.id = 'loseDetails';
     detailsContainer.className = 'lose-details';
-
     var img = document.createElement('img');
     img.src = 'images/' + character.toLowerCase() + '.png';
     img.alt = character;
@@ -301,6 +327,12 @@ function createNewDivForCharacter(character) {
         if (characterDetails.hasOwnProperty(key)) {
             var detailDiv = document.createElement('div');
             detailDiv.className = 'detail';
+            detailDiv.style.left = `${space}vw`;
+            if (correctCategories.includes(characterDetails[key])) {
+                detailDiv.classList.add('correct');
+            } else if (wrongCategories.includes(key)) {
+                detailDiv.classList.add('wrong');
+            }
             detailDiv.innerHTML = `<span class="detail-value">${characterDetails[key]}</span>`;
             detailsContainer.appendChild(detailDiv);
         }
@@ -310,9 +342,6 @@ function createNewDivForCharacter(character) {
 }
 
 function resetGame() {
-    // Change the chosen character
-    chooseCharacter();
-
     // Clear dynamically added rows from the table
     var table = document.getElementById('table');
     for (var i = table.rows.length - 1; i > 0; i--) {
@@ -341,7 +370,7 @@ function resetGame() {
         loseDetails.remove();
     }
     // Reinitialize the dropdown options
-    initializeDropdown();
+    initializePage();
 
     // Hide and disable the play again button
     var playAgainButton = document.getElementById('playAgainButton');
@@ -350,6 +379,7 @@ function resetGame() {
 
     // Reset remaining guesses
     remainingGuesses = maxGuesses;
+    totalPenalty = 0; // Reset the total penalty
 }
 
 
@@ -407,26 +437,6 @@ function removeCharacterFromDropdown(character) {
     });
 }
 
-function initializeDropdown() {
-    const optionsContainer = document.getElementById('options');
-    optionsContainer.innerHTML = ''; // Clear existing options
-
-    for (const character in characters) {
-        if (characters.hasOwnProperty(character) && !addedCharacters.includes(character)) {
-            const option = document.createElement('div');
-            option.className = 'dropdown';
-            const img = document.createElement('img');
-            img.src = 'images/' + character.toLowerCase() + '.png';
-            img.alt = character;
-            option.appendChild(img);
-            const text = document.createTextNode(' ' + character.charAt(0).toUpperCase() + character.slice(1));
-            option.appendChild(text);
-            optionsContainer.appendChild(option);
-        }
-    }
-}
-
-
 function dropDown(event) {
     var input = document.getElementById('textAnswer');
     var selectedOption = event.target.textContent.trim();
@@ -464,6 +474,43 @@ function showDropdown() {
     }
 }
 
+let revealedClues = [];
+let spacing = 12;
+
+function revealClue() {
+    const clueButton = document.getElementById("clueButton");
+    const clueList = document.getElementById("cluesList");
+    if (chosenCharacter) {
+        const randomCategory = getRandomCategory();
+        if (randomCategory) {
+            const category = randomCategory;
+            const clue = characterDetails[category]; // Assuming characterDetails contains all details for all categories
+            if (!revealedClues.includes(category)) {
+                const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
+                const clueItem = document.createElement('li');
+                clueItem.className = "clueList";
+                clueItem.style.top = `${spacing}vw`; 
+                clueItem.textContent = `${capitalizedCategory}: ${clue}`;
+                clueList.appendChild(clueItem);
+                revealedClues.push(category);
+                score -= 50;
+                updateScore(score);
+                spacing += 2;
+            } else {
+                revealClue(); // Try to reveal another clue if this one is already revealed
+            }            
+        }
+    }
+}
+
+function getRandomCategory() {
+    const randomIndex = Math.floor(Math.random() * wrongCategories.length);
+    return wrongCategories[randomIndex];
+}
+
+
+
+
 
 document.addEventListener('click', function(event) {
     var input = document.getElementById('textAnswer');
@@ -474,6 +521,14 @@ document.addEventListener('click', function(event) {
         dropDown(event); // Pass the event object to dropDown function
     }
 });
+
+function calculatePenalty(details) {
+    let incorrectCategories = 8 - correctCategories.length; // There are 8 categories in total
+    let penalty = incorrectCategories * 10; // Deduct 5 points for each incorrect category
+    totalPenalty += penalty; // Update the total penalty
+    return totalPenalty; // Return the penalty for this guess
+}
+
 
 function updateScore(newScore) {
     score = newScore;
