@@ -508,10 +508,6 @@ function getRandomCategory() {
     return wrongCategories[randomIndex];
 }
 
-
-
-
-
 document.addEventListener('click', function(event) {
     var input = document.getElementById('textAnswer');
     var dataList = document.getElementById('options');
@@ -524,7 +520,7 @@ document.addEventListener('click', function(event) {
 
 function calculatePenalty(details) {
     let incorrectCategories = 8 - correctCategories.length; // There are 8 categories in total
-    let penalty = incorrectCategories * 15; // Deduct 15 points for each incorrect category
+    let penalty = incorrectCategories * 15; // Deduct 5 points for each incorrect category
     totalPenalty += penalty; // Update the total penalty
     return totalPenalty; // Return the penalty for this guess
 }
@@ -555,4 +551,3 @@ function resetScore() {
     // Update the displayed score to zero
     updateScore(0);
 }
-
