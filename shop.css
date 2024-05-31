@@ -37,3 +37,16 @@ body {
     background-color: #ddd;
     color: black;
 }
+
+.score{
+    background-color: aquamarine;
+    padding: 1vw;
+    width: 6vw;
+    border-radius: 5vw;
+    position: absolute;
+    top: 3.5vw; 
+    left: 95vw;
+    transform: translateX(-50%);
+    text-align: center;
+
+}
