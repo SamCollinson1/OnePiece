@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece</title>
     <link rel="stylesheet" href="shop.css">
-    <script src="shop.js"></script>
+    <script defer src="shop.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -16,5 +16,19 @@
     <div>
         <p class="score" id="score">Score: </p>
     </div>
+    <div class="packContainer">
+        <div class="strawhatContainer" onclick="handlePackClick(1, 'opening.html')">
+            <img src="images/strawhatCard.jpeg" class="strawhatCard">
+            <div>
+                <img src="images/currency.png" class="currency">
+                <p class="price">1000</p>
+            </div>
+            <div class="text">
+                <header>STRAW HATS PIRATES</header>
+                <p class="details">| Straw Hats Characters: 5% Chance |</p>
+                <p class="details">| Captain/Admirals: 10% Chance |</p>
+            </div>
+        </div>
+    </div>    
 </body>
 </html>

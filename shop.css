@@ -17,6 +17,8 @@ body {
     background-color: #333;
     overflow: hidden;
     width: 100%;
+    position: relative; /* Add position relative */
+    z-index: 2; /* Set z-index to a higher value */
 }
 
 .nav-section {
@@ -49,4 +51,69 @@ body {
     transform: translateX(-50%);
     text-align: center;
 
+}
+
+.packContainer {
+    background-color: #9A7B4F;
+    width: 50vw; /* Set width to half of the viewport width */
+    height: 100vh; /* Set height to fill the entire viewport height */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Set z-index to a lower value */
+}
+
+
+.strawhatCard{
+    width:10vW;
+    position: absolute;
+    top: 1vw;
+    left: 6vw;
+    transform: translateX(-50%);
+}
+
+.strawhatContainer{
+    background-color: lightgray;
+    width:45vw;
+    height:16vw;
+    position: absolute;
+    top: 5vw;
+    left: 2.5vw;
+    text-decoration: none;
+    color: inherit; /* Remove link color */
+}
+
+.text{
+    position: absolute;
+    top: 3vw;
+    left: 27vw;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.currency{
+    width:1.5vw;
+    position: absolute;
+    top: 0.9vw;
+    left: 38.2vw;
+}
+
+.price{
+    position: absolute;
+    top: 0;
+    left: 40vw;
+    font-size: 25px;
+    color:#aa7918;
+}
+header{
+    font-size: 40px;
+    color: #B90E0A;
+}
+.details{
+    font-size: 20px;
+    color: #DAA520;
 }
