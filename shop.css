@@ -117,3 +117,67 @@ header{
     font-size: 20px;
     color: #DAA520;
 }
+
+@media (max-width: 900px) {
+    .packContainer {
+        width: 70vw;
+        height: 97.5vh; 
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1; /* Set z-index to a lower value */
+    }
+
+    .strawhatCard{
+        width:18vW;
+        position: absolute;
+        top: 2.5vw;
+        left: 12vw;
+        transform: translateX(-50%);
+    }
+    
+    .strawhatContainer{
+        background-color: lightgray;
+        width:64.5vw;
+        height:30vw;
+        position: absolute;
+        top: 10vw;
+        left: 2.5vw;
+        text-decoration: none;
+        color: inherit; /* Remove link color */
+    }
+    
+    .text{
+        position: absolute;
+        top: 8vw;
+        left: 43vw;
+        text-align: center;
+        width: 42vw;
+    }
+    
+    .currency{
+        width:2.5vw;
+        position: absolute;
+        top: 1.3vw;
+        left: 53.8vw;
+    }
+    
+    .price{
+        position: absolute;
+        transform: translate(300%,-20%);
+        font-size: 12px;
+        color:#aa7918;
+    }
+    header{
+        font-size: 15px;
+        color: #B90E0A;
+    }
+    .details{
+        font-size: 12px;
+        color: #DAA520;
+    }
+}
