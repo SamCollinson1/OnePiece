@@ -1,1 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body {
+    font-family: "Poetsen One", sans-serif; 
+    margin: 0;
+    background-image: url("images/seaBackground.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+#packContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    width: 80vw; /* Adjust width as needed */
+    height: 90vh; /* Adjust height as needed */
+    position: relative;
+    gap: 10px; /* Adds spacing between posters */
+    left: 10vw;
+    top: 2vw;
+}
+
+.poster-container {
+    width: calc(20% - 20px); /* 20% of parent width with spacing */
+    position: relative; /* Relative positioning for absolute child */
+    display: flex; /* Center poster content */
+    justify-content: center; /* Center poster content */
+    align-items: center; /* Center poster content */
+}
+
+.poster, .photo {
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Set position for z-index to work */
+}
+
+.photo {
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the photo is behind the poster */
+    transform: translate(17%,-68.5%);
+    width: 11vw;
+}
+
+.poster {
+    z-index: 2; /* Ensure the poster is in front of the photo */
+    width: 13vw;
+}
+
+.poster-text {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 195%);
+    color: #554024;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: bold;
+    z-index: 3; /* Ensure the text is above the photo */
+}
+
+.close {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+.close:hover {
+    background-color: #FF474D;
+}
+
+@media (max-width: 900px) {
+    .poster-container {
+        width: calc(22% - 20px); /* 33.333% of parent width with spacing */
+    }
+
+    #packContainer{
+        width: 90vw; /* Adjust width as needed */
+        height: 35vh; /* Adjust height as needed */
+        position: relative;
+        gap: 10px; /* Adds spacing between posters */
+        left: 5vw;
+        top: 40vw;
+    }
+
+    .photo {
+        top: 0;
+        left: 0;
+        z-index: 1; /* Ensure the photo is behind the poster */
+        transform: translate(17%,-68%);
+        width: 13vw;
+    }
+    
+    .poster {
+        z-index: 2; /* Ensure the poster is in front of the photo */
+        width: 15vw;
+    }
+
+    .poster-text {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 145%);
+        color: #554024;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 3; /* Ensure the text is above the photo */
+    }
+}
 

@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh;
             background-color: #000; /* Optional: set background color */
+            position: relative;
         }
         .gif-container {
             width: 100%;
@@ -24,17 +25,37 @@
             max-width: 100%;
             max-height: 100%;
         }
+        .skip-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .skip-button:hover {
+            background-color: #ddd;
+        }
     </style>
     <script>
-        // Redirect after a certain period (e.g., 5 seconds)
+        // Redirect after a certain period (e.g., 7 seconds)
         setTimeout(function() {
-            window.location.href = 'shop.html'; // Change to your desired page
+            window.location.href = 'pack.html'; // Change to your desired page
         }, 7000); // Time in milliseconds
+
+        function skip() {
+            window.location.href = 'pack.html'; // Redirect immediately
+        }
     </script>
 </head>
 <body>
     <div class="gif-container">
         <img src="images/opening.gif" alt="Loading...">
     </div>
+    <button class="skip-button" onclick="skip()">Skip</button>
 </body>
 </html>
