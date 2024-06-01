@@ -1,43 +1,37 @@
 {
   "strawhatPack": [
-    {"name": "LuffyS", "chance": 0.05},
-    {"name": "Zoro", "chance": 0.05},
-    {"name": "Nami", "chance": 0.05},
-    {"name": "Sanji", "chance": 0.05},
-    {"name": "Chopper", "chance": 0.05},
-    {"name": "Robin", "chance": 0.05},
-    {"name": "Franky", "chance": 0.05},
-    {"name": "Brook", "chance": 0.05},
-    {"name": "Jinbe", "chance": 0.05},
-  ]
-}
+    {"name": "LuffyS", "chance": 0.1},
+    {"name": "Zoro", "chance": 0.1},
+    {"name": "Nami", "chance": 0.1},
+    {"name": "Sanji", "chance": 0.1},
+    {"name": "Chopper", "chance": 0.1},
+    {"name": "Robin", "chance": 0.1},
+    {"name": "Franky", "chance": 0.1},
+    {"name": "Brook", "chance": 0.1},
+    {"name": "Jinbe", "chance": 0.1}
+  ],
 
-{
   "emperorsPack": [
-    {"name": "Shanks", "chance": 0.05},
-    {"name": "Luffy", "chance": 0.05},
-    {"name": "Buggy", "chance": 0.05},
-    {"name": "Kaido", "chance": 0.05},
-    {"name": "Blackbeard", "chance": 0.05},
-    {"name": "Whitebeard", "chance": 0.05},
-    {"name": "Bigmom", "chance": 0.05},
-  ]
-}
+    {"name": "Shanks", "chance": 0.1},
+    {"name": "Luffy", "chance": 0.1},
+    {"name": "Buggy", "chance": 0.1},
+    {"name": "Kaido", "chance": 0.1},
+    {"name": "Blackbeard", "chance": 0.1},
+    {"name": "Whitebeard", "chance": 0.1},
+    {"name": "Bigmom", "chance": 0.1}
+  ],
 
-{
   "warlordsPack": [
-    {"name": "Mihawk", "chance": 0.05},
-    {"name": "Kuma", "chance": 0.05},
-    {"name": "Boa", "chance": 0.05},
-    {"name": "Weevil", "chance": 0.05},
-    {"name": "Crocodile", "chance": 0.05},
-    {"name": "Moria", "chance": 0.05},
-    {"name": "Law", "chance": 0.05},
-    {"name": "Doflamingo", "chance": 0.05},
-  ]
-}
+    {"name": "Mihawk", "chance": 0.1},
+    {"name": "Kuma", "chance": 0.1},
+    {"name": "Boa", "chance": 0.1},
+    {"name": "Weevil", "chance": 0.1},
+    {"name": "Crocodile", "chance": 0.1},
+    {"name": "Moria", "chance": 0.1},
+    {"name": "Law", "chance": 0.1},
+    {"name": "Doflamingo", "chance": 0.1}
+  ],
 
-{
   "defaultChances": [
     {"name": "Ace", "chance": 0.33},
     {"name": "Akainu", "chance": 0.33},

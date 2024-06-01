@@ -87,10 +87,37 @@ body {
     color: inherit; /* Remove link color */
 }
 
-.text{
+.emperorCard{
+    width:10vW;
+    position: absolute;
+    top: 1vw;
+    left: 6vw;
+    transform: translateX(-50%);
+}
+
+.emperorContainer{
+    background-color: lightgray;
+    width:45vw;
+    height:16vw;
+    position: absolute;
+    top: 25vw;
+    left: 2.5vw;
+    text-decoration: none;
+    color: inherit; /* Remove link color */
+}
+
+.sText{
     position: absolute;
     top: 3vw;
-    left: 27vw;
+    left: 26.5vw;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.eText{
+    position: absolute;
+    top: 5vw;
+    left: 26.5vw;
     transform: translateX(-50%);
     text-align: center;
 }

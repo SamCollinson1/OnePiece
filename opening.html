@@ -42,13 +42,23 @@
         }
     </style>
     <script>
+        // Parse the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        // Get the pack ID from the query parameters
+        const packId = urlParams.get('packId');
+        console.log('Clicked pack ID:', packId);
+
         // Redirect after a certain period (e.g., 7 seconds)
         setTimeout(function() {
-            window.location.href = 'pack.html'; // Change to your desired page
+            // Construct the URL with the pack ID as a query parameter
+            const urlWithPackId = `pack.html?packId=${packId}`;
+            window.location.href = urlWithPackId; // Redirect to the next page with pack ID
         }, 7000); // Time in milliseconds
 
         function skip() {
-            window.location.href = 'pack.html'; // Redirect immediately
+            // Construct the URL with the pack ID as a query parameter
+            const urlWithPackId = `pack.html?packId=${packId}`;
+            window.location.href = urlWithPackId; // Redirect to the next page with pack ID
         }
     </script>
 </head>

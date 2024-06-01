@@ -22,6 +22,8 @@ window.addEventListener('load', displayScore);
 
 function updateScore(price) {
     let score = getScore();
+    console.log(score);
+    console.log(price);
     if (score >= price) {
         score -= price;
         document.getElementById("score").textContent = `Score: ${score}`;
@@ -33,8 +35,13 @@ function updateScore(price) {
     }
 }
 
-function handlePackClick(price, url) {
+// Update the score and handle navigation to the next page
+function handlePackClick(packId, price, url) {
     if (updateScore(price)) {
-        window.location.href = url;
+        // Construct the URL with the pack ID as a query parameter
+        const urlWithPack = `${url}?packId=${packId}`;
+        window.location.href = urlWithPack;
     }
 }
+
+
