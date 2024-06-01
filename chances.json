@@ -1,6 +1,6 @@
 {
   "strawhatPack": [
-    {"name": "Luffy", "chance": 0.05},
+    {"name": "LuffyS", "chance": 0.05},
     {"name": "Zoro", "chance": 0.05},
     {"name": "Nami", "chance": 0.05},
     {"name": "Sanji", "chance": 0.05},
@@ -8,12 +8,102 @@
     {"name": "Robin", "chance": 0.05},
     {"name": "Franky", "chance": 0.05},
     {"name": "Brook", "chance": 0.05},
-    {"name": "Akainu", "chance": 0.10},
-    {"name": "Kizaru", "chance": 0.10},
-    {"name": "Aokiji", "chance": 0.10},
-    {"name": "Blackbeard", "chance": 0.10},
-    {"name": "BigMom", "chance": 0.10},
-    {"name": "Kaido", "chance": 0.10},
-    {"name": "Shanks", "chance": 0.10}
+    {"name": "Jinbe", "chance": 0.05},
   ]
 }
+
+{
+  "emperorsPack": [
+    {"name": "Shanks", "chance": 0.05},
+    {"name": "Luffy", "chance": 0.05},
+    {"name": "Buggy", "chance": 0.05},
+    {"name": "Kaido", "chance": 0.05},
+    {"name": "Blackbeard", "chance": 0.05},
+    {"name": "Whitebeard", "chance": 0.05},
+    {"name": "Bigmom", "chance": 0.05},
+  ]
+}
+
+{
+  "warlordsPack": [
+    {"name": "Mihawk", "chance": 0.05},
+    {"name": "Kuma", "chance": 0.05},
+    {"name": "Boa", "chance": 0.05},
+    {"name": "Weevil", "chance": 0.05},
+    {"name": "Crocodile", "chance": 0.05},
+    {"name": "Moria", "chance": 0.05},
+    {"name": "Law", "chance": 0.05},
+    {"name": "Doflamingo", "chance": 0.05},
+  ]
+}
+
+{
+  "defaultChances": [
+    {"name": "Ace", "chance": 0.33},
+    {"name": "Akainu", "chance": 0.33},
+    {"name": "Aokiji", "chance": 0.33},
+    {"name": "Dragon", "chance": 0.33},
+    {"name": "Garp", "chance": 0.33},
+    {"name": "Kid", "chance": 0.33},
+    {"name": "Kizaru", "chance": 0.33},
+    {"name": "Roger", "chance": 0.33},
+    {"name": "Sabo", "chance": 0.33},
+    {"name": "Sengoku", "chance": 0.33},
+    {"name": "Fujitora", "chance": 0.33},
+    {"name": "Katakuri", "chance": 0.33},
+    {"name": "Rayleigh", "chance": 0.33},
+    {"name": "Yamato", "chance": 0.33},
+    {"name": "Koby", "chance": 0.33},
+    {"name": "Killer", "chance": 0.33},
+    {"name": "Perona", "chance": 0.33},
+    {"name": "Smoker", "chance": 0.33},
+    {"name": "Marco", "chance": 0.33},
+    {"name": "Enel", "chance": 0.33},
+    {"name": "Shiryu", "chance": 0.33},
+    {"name": "Pedro", "chance": 0.33},
+    {"name": "Shakuyaku", "chance": 0.33},
+    {"name": "Pudding", "chance": 0.33},
+    {"name": "Reiju", "chance": 0.33},
+    {"name": "Ichiji", "chance": 0.33},
+    {"name": "Niji", "chance": 0.33},
+    {"name": "Yonji", "chance": 0.33},
+    {"name": "Kaku", "chance": 0.33},
+    {"name": "Lucci", "chance": 0.33},
+    {"name": "Bonclay", "chance": 0.33},
+    {"name": "Monet", "chance": 0.33},
+    {"name": "Caesar", "chance": 0.33},
+    {"name": "Magellan", "chance": 0.33},
+    {"name": "Ivankov", "chance": 0.33},
+    {"name": "Vivi", "chance": 0.33},
+    {"name": "Tashigi", "chance": 0.33},
+    {"name": "Hawkins", "chance": 0.33},
+    {"name": "Apoo", "chance": 0.33},
+    {"name": "XDrake", "chance": 0.33},
+    {"name": "Urouge", "chance": 0.33},
+    {"name": "Bege", "chance": 0.33},
+    {"name": "Kuro", "chance": 0.33},
+    {"name": "Krieg", "chance": 0.33},
+    {"name": "Arlong", "chance": 0.33},
+    {"name": "Wapol", "chance": 0.33},
+    {"name": "Bellamy", "chance": 0.33},
+    {"name": "Bartolomeo", "chance": 0.33},
+    {"name": "Cavendish", "chance": 0.33},
+    {"name": "Hody", "chance": 0.33},
+    {"name": "Rebecca", "chance": 0.33},
+    {"name": "Carrot", "chance": 0.33},
+    {"name": "Nekomamushi", "chance": 0.33},
+    {"name": "Inuarashi", "chance": 0.33},
+    {"name": "Oden", "chance": 0.33},
+    {"name": "Kanjuro", "chance": 0.33},
+    {"name": "Kinemon", "chance": 0.33},
+    {"name": "Denjiro", "chance": 0.33},
+    {"name": "Momonosuke", "chance": 0.33},
+    {"name": "Hiyori", "chance": 0.33},
+    {"name": "Kiku", "chance": 0.33},
+    {"name": "Kawamatsu", "chance": 0.33},
+    {"name": "Ashura", "chance": 0.33},
+    {"name": "Shinobu", "chance": 0.33},
+    {"name": "Izou", "chance": 0.33}
+  ]
+}
+
