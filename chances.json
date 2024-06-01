@@ -1,0 +1,19 @@
+{
+  "strawhatPack": [
+    {"name": "Luffy", "chance": 0.05},
+    {"name": "Zoro", "chance": 0.05},
+    {"name": "Nami", "chance": 0.05},
+    {"name": "Sanji", "chance": 0.05},
+    {"name": "Chopper", "chance": 0.05},
+    {"name": "Robin", "chance": 0.05},
+    {"name": "Franky", "chance": 0.05},
+    {"name": "Brook", "chance": 0.05},
+    {"name": "Akainu", "chance": 0.10},
+    {"name": "Kizaru", "chance": 0.10},
+    {"name": "Aokiji", "chance": 0.10},
+    {"name": "Blackbeard", "chance": 0.10},
+    {"name": "Big Mom", "chance": 0.10},
+    {"name": "Kaido", "chance": 0.10},
+    {"name": "Shanks", "chance": 0.10}
+  ]
+}
