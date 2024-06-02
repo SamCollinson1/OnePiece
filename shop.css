@@ -41,7 +41,7 @@ body {
 }
 
 .score{
-    background-color: aquamarine;
+    background-color: lightgrey;
     padding: 1vw;
     width: 6vw;
     border-radius: 5vw;
@@ -50,7 +50,14 @@ body {
     left: 95vw;
     transform: translateX(-50%);
     text-align: center;
+    color:#aa7918;
+}
 
+.sCurrency{
+    width:1.5vw;
+    position: absolute;
+    right: 6vw;
+    top: 4.8vw;
 }
 
 .packContainer {
@@ -125,17 +132,54 @@ body {
 .currency{
     width:1.5vw;
     position: absolute;
-    top: 0.9vw;
-    left: 38.2vw;
+    bottom:0.1vw;
+    right: 4.3vw;
 }
 
 .price{
     position: absolute;
-    top: 0;
-    left: 40vw;
+    bottom: 0;
+    right: 1vw;
+    transform: translateY(50%);
     font-size: 25px;
     color:#aa7918;
 }
+
+.scoreTitle{
+    position: absolute;
+    top: 0;
+    left: 39.5vw;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color:#aa7918;
+}
+
+.dCurrency{
+    width:1.5vw;
+    position: absolute;
+    bottom:0.1vw;
+    right: 10.8vw;
+}
+
+.dPrice{
+    position: absolute;
+    bottom: 0;
+    right: 8vw;
+    transform: translateY(50%);
+    font-size: 25px;
+    color:#aa7918;
+}
+
+.button-container button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+
 header{
     font-size: 40px;
     color: #B90E0A;

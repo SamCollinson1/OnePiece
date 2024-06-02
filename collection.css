@@ -38,30 +38,117 @@ body {
     color: black;
 }
 
-.collection-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.poster {
-    width: 10vw;
-    margin: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-.poster:hover {
-    transform: scale(1.05);
-}
-.poster img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.title{
+    text-align: center;
+    background-color: gold;
+    padding: 1vw;
 }
 
-.header-affiliation {
-    margin-top: 20px;
+#collectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw; /* Adjust width as needed */
+    height: 90vh; /* Adjust height as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    position: relative;
+    gap: 1vw; /* Adds spacing between posters */
+    top: 2vw;
+}
+
+
+.affiliation-section {
+    margin: 20px;
+    width: 100%;
+}
+
+.affiliation-section h2 {
     text-align: center;
+}
+
+.poster-container {
+    left: 14.7vw;
+    top:1.5vw;
+    width: calc(20% - 20px); /* 20% of parent width with spacing */
+    margin: 3vw; /* Add margin to create gaps between posters */
+    position: relative; /* Relative positioning for absolute child */
+    display: flex; /* Center poster content */
+    justify-content: center; /* Center poster content */
+    align-items: center; /* Center poster content */
+}
+
+
+.poster, .photo {
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Set position for z-index to work */
+}
+
+.photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the photo is behind the poster */
+    transform: translate(-35%,-55%);
+    width: 6.2vw;
+}
+
+.poster {
+    position: absolute;
+    z-index: 2; /* Ensure the poster is in front of the photo */
+    width: 7vw;
+}
+
+.poster-text {
+    position: relative;
+    top: 2.8vw; /* Adjust the position to ensure it's below the poster */
+    color: #554024;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
     font-weight: bold;
+    text-align: center; /* Center the text */
+    z-index: 3;
+}
+
+.not-obtained {
+    filter: grayscale(100%);
+}
+
+.not-obtainedPoster {
+    filter: grayscale(40%);
+}
+
+
+
+@media (max-width: 900px) {
+    #packContainer {
+        width: 90vw; /* Adjust width as needed */
+        height: 35vh; /* Adjust height as needed */
+        position: relative;
+        gap: 10px; /* Adds spacing between posters */
+        left: 5vw;
+        top: 40vw;
+    }
+
+    .poster-container {
+        width: 22%; /* 22% of parent width */
+    }
+
+    .photo {
+        width: 100%;
+    }
+    
+    .poster {
+        width: 100%;
+    }
+
+    .poster-text {
+        position: relative;
+        top: 10px; /* Adjust the position to ensure it's below the poster */
+        color: #554024;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 3; /* Ensure the text is above the photo */
+    }
 }

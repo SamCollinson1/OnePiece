@@ -1,6 +1,6 @@
 {
   "strawhatPack": [
-    {"name": "LuffyS", "chance": 0.1},
+    {"name": "Luffy", "chance": 0.1},
     {"name": "Zoro", "chance": 0.1},
     {"name": "Nami", "chance": 0.1},
     {"name": "Sanji", "chance": 0.1},
@@ -8,7 +8,8 @@
     {"name": "Robin", "chance": 0.1},
     {"name": "Franky", "chance": 0.1},
     {"name": "Brook", "chance": 0.1},
-    {"name": "Jinbe", "chance": 0.1}
+    {"name": "Jinbe", "chance": 0.1},
+    {"name": "Usopp", "chance": 0.1}
   ],
 
   "emperorsPack": [

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     addObtainedCard(selectedCharacter);
                 } else {
                     // Handle duplicate card
-                    handleDuplicateCard(selectedCharacter);
+                    handleDuplicateCard(selectedCharacter, packCharacters);
                 }
             }
         }
@@ -105,10 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
         obtainedCards.push(cardName);
     }
 
-    function handleDuplicateCard(cardName) {
-        // Increase duplicate value or implement your logic here
-        duplicateValue += 1;
+    function handleDuplicateCard(cardName, packCharacters) {
+        // Check if the duplicate card is from pack characters
+        const isPackCharacter = packCharacters.some(character => character.name === cardName);
+        
+        // Increase duplicate value
+        duplicateValue += isPackCharacter ? 15 : 2;
     }
+    
 
     function hasObtainedCard(cardName) {
         return obtainedCards.includes(cardName);

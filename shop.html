@@ -15,20 +15,30 @@
     </nav>
     <div>
         <p class="score" id="score">Score: </p>
+        <img src="images/currency.png" class="sCurrency">
+        <p class="dupValue" id="duplicateValue">Duplicate Value: </p>
     </div>
     <div class="packContainer">
-        <div class="strawhatContainer" onclick="handlePackClick('strawhatPack', 1, 'opening.html')">
+        <div class="strawhatContainer">
             <img src="images/strawhatCard.jpeg" class="strawhatCard">
-            <div>
-                <img src="images/currency.png" class="currency">
-                <p class="price">1000</p>
+            <div class="button-container">
+                <button onclick="handlePackClick('strawhatPack', 1, 'opening.html', 'score', 1000)">
+                    <p class="scoreTitle">Score</p>
+                    <img src="images/currency.png" class="currency">
+                    <p class="price">1000</p>
+                </button>
+                <button onclick="handlePackClick('strawhatPack', 15, 'opening.html', 'duplicateValue', 40)">
+                    <p class="duplicateTitle">Duplicate</p>
+                    <img src="images/currency.png" class="dCurrency">
+                    <p class="dPrice">200</p>
+                </button>
             </div>
             <div class="sText">
                 <header>STRAW HATS PIRATES</header>
                 <p class="details">| Straw Hats Characters: 10% Chance |</p>
             </div>
         </div>
-        <div class="emperorContainer" onclick="handlePackClick('emperorsPack', 1, 'opening.html')">
+        <div class="emperorContainer">
             <img src="images/emperors.png" class="emperorCard">
             <div>
                 <img src="images/currency.png" class="currency">
@@ -38,7 +48,12 @@
                 <header>EMPERORS</header>
                 <p class="details">| Emperors: 10% Chance |</p>
             </div>
+            <div class="button-container">
+                <button onclick="handlePackClick('emperorsPack', 1, 'opening.html', 'score')">Spend Score</button>
+                <button onclick="handlePackClick('emperorsPack', 15, 'opening.html', 'duplicateValue')">Spend Duplicate Value</button>
+            </div>
         </div>
+        
     </div>    
 </body>
 </html>
