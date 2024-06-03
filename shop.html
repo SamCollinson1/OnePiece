@@ -13,24 +13,25 @@
         <div class="nav-section"><a href="shop.html">Shop</a></div> 
         <div class="nav-section"><a href="collection.html">Collection</a></div>
     </nav>
-    <div>
-        <p class="score" id="score">Score: </p>
+    <div class = "scoreContainer">
+        <p class="score" id="score"></p>
         <img src="images/currency.png" class="sCurrency">
-        <p class="dupValue" id="duplicateValue">Duplicate Value: </p>
+    </div>
+    <div class = "duplicateContainer">
+        <p class="dupValue" id="duplicateValue"></p>
+        <img src="images/dupCurrency.png" class="dupCurrency">
     </div>
     <div class="packContainer">
         <div class="strawhatContainer">
             <img src="images/strawhatCard.jpeg" class="strawhatCard">
             <div class="button-container">
-                <button onclick="handlePackClick('strawhatPack', 1, 'opening.html', 'score', 1000)">
-                    <p class="scoreTitle">Score</p>
+                <button onclick="handlePackClick('strawhatPack', 1000, 'opening.html', 'score', 1000)">
                     <img src="images/currency.png" class="currency">
                     <p class="price">1000</p>
                 </button>
-                <button onclick="handlePackClick('strawhatPack', 15, 'opening.html', 'duplicateValue', 40)">
-                    <p class="duplicateTitle">Duplicate</p>
-                    <img src="images/currency.png" class="dCurrency">
-                    <p class="dPrice">200</p>
+                <button onclick="handlePackClick('strawhatPack', 15, 'opening.html', 'duplicateValue')">
+                    <img src="images/dupCurrency.png" class="dCurrency">
+                    <p class="dPrice"><span id="strawhatDupPrice">200</span></p>
                 </button>
             </div>
             <div class="sText">
@@ -40,20 +41,55 @@
         </div>
         <div class="emperorContainer">
             <img src="images/emperors.png" class="emperorCard">
-            <div>
-                <img src="images/currency.png" class="currency">
-                <p class="price">1000</p>
+            <div class="button-container">
+                <button onclick="handlePackClick('emperorPack', 1000, 'opening.html', 'score', 1000)">
+                    <img src="images/currency.png" class="currency">
+                    <p class="price">1000</p>
+                </button>
+                <button onclick="handlePackClick('emperorPack', 15, 'opening.html', 'duplicateValue')">
+                    <img src="images/dupCurrency.png" class="dCurrency">
+                    <p class="dPrice"><span id="emperorDupPrice">200</span></p>
+                </button>
             </div>
             <div class="eText">
                 <header>EMPERORS</header>
                 <p class="details">| Emperors: 10% Chance |</p>
             </div>
+        </div>
+        <div class="warlordContainer">
+            <img src="images/warlords.webp" class="warlordCard">
             <div class="button-container">
-                <button onclick="handlePackClick('emperorsPack', 1, 'opening.html', 'score')">Spend Score</button>
-                <button onclick="handlePackClick('emperorsPack', 15, 'opening.html', 'duplicateValue')">Spend Duplicate Value</button>
+                <button onclick="handlePackClick('warlordPack', 1000, 'opening.html', 'score', 1000)">
+                    <img src="images/currency.png" class="currency">
+                    <p class="price">1000</p>
+                </button>
+                <button onclick="handlePackClick('warlordPack', 15, 'opening.html', 'duplicateValue')">
+                    <img src="images/dupCurrency.png" class="dCurrency">
+                    <p class="dPrice"><span id="warlordDupPrice">200</span></p>
+                </button>
+            </div>
+            <div class="wText">
+                <header>WARLORDS</header>
+                <p class="details">| WARLORDS: 10% Chance |</p>
             </div>
         </div>
-        
+        <div class="admiralContainer">
+            <img src="images/admirals.jpg" class="admiralCard">
+            <div class="button-container">
+                <button onclick="handlePackClick('admiralPack', 10, 'opening.html', 'score', 1000)">
+                    <img src="images/currency.png" class="currency">
+                    <p class="price">1000</p>
+                </button>
+                <button onclick="handlePackClick('admiralPack', 15, 'opening.html', 'duplicateValue')">
+                    <img src="images/dupCurrency.png" class="dCurrency">
+                    <p class="dPrice"><span id="admiralDupPrice">200</span></p>
+                </button>
+            </div>
+            <div class="aText">
+                <header>ADMIRALS</header>
+                <p class="details">| Admirals: 10% Chance |</p>
+            </div>
+        </div>
     </div>    
 </body>
 </html>

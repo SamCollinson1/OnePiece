@@ -1,46 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
+    localStorage.setItem('pageRefreshed', 'false');
     // Retrieve duplicateValue from localStorage
     const duplicateValue = parseInt(localStorage.getItem('duplicateValue')) || 0;
-    
+
     // Display duplicateValue on the screen
     const duplicateValueElement = document.getElementById('duplicateValue');
     if (duplicateValueElement) {
-        duplicateValueElement.textContent = `Duplicate Value: ${duplicateValue}`;
+        duplicateValueElement.textContent = duplicateValue;
     }
-    
-    // Rest of your code...
+
+    // Call functions to set dynamic prices
+    setDynamicPrices();
 });
 
-
-// Retrieve the score from local storage
 function getScore() {
     return parseInt(localStorage.getItem('score')) || 0;
 }
 
-// Save the score to local storage
 function saveScore(score) {
     localStorage.setItem('score', score);
 }
 
-// Display the score on the other page
 function displayScore() {
     const scoreElement = document.getElementById('score');
     if (scoreElement) {
         const score = getScore();
-        scoreElement.textContent = `Score: ${score}`;
+        scoreElement.textContent = score;
     }
 }
 
-// Call the function to display the score when the other page loads
 window.addEventListener('load', displayScore);
 
 function updateScore(price) {
     let score = getScore();
-    console.log(score);
-    console.log(price);
     if (score >= price) {
         score -= price;
-        document.getElementById("score").textContent = `Score: ${score}`;
+        document.getElementById("score").textContent = score;
         saveScore(score); // Save the updated score to Local Storage
         return true; // Allow navigation to the next page
     } else {
@@ -49,7 +44,6 @@ function updateScore(price) {
     }
 }
 
-// Update the score and handle navigation to the next page
 function handlePackClick(packId, price, url, currencyType) {
     if (currencyType === 'score') {
         if (updateScore(price)) {
@@ -57,30 +51,33 @@ function handlePackClick(packId, price, url, currencyType) {
             window.location.href = urlWithPack;
         }
     } else if (currencyType === 'duplicateValue') {
-        if (updateDuplicateValue(price)) {
+        if (updateDuplicateValue()) {
             const urlWithPack = `${url}?packId=${packId}`;
             window.location.href = urlWithPack;
         }
     }
 }
 
-function updateDuplicateValue(price) {
-    let duplicateValue = parseInt(localStorage.getItem('duplicateValue')) || 0;
+function getDuplicatePrice() {
     let obtainedCards = JSON.parse(localStorage.getItem('obtainedCards')) || [];
     let totalCards = obtainedCards.length;
 
     // Calculate the percentage of cards collected
-    let percentageCollected = (totalCards / totalCards) * 100;
+    let percentageCollected = (totalCards / 100) * 100; // assuming 100 is the total number of cards
 
-    // Calculate the price based on the percentage of cards collected
-    let duplicatePrice = 0;
-    if (percentageCollected <= 25) {
-        duplicatePrice = 40;
-    } else if (percentageCollected <= 50) {
-        duplicatePrice = 100;
-    } else {
-        duplicatePrice = 200;
+    // Determine the price based on the percentage of cards collected
+    if (percentageCollected <= 50) {
+        return 50;
+    } else if (percentageCollected <= 75) {
+        return 150;
+    } else{
+        return 200;
     }
+}
+
+function updateDuplicateValue() {
+    let duplicateValue = parseInt(localStorage.getItem('duplicateValue')) || 0;
+    let duplicatePrice = getDuplicatePrice();
 
     if (duplicateValue >= duplicatePrice) {
         duplicateValue -= duplicatePrice;
@@ -93,14 +90,30 @@ function updateDuplicateValue(price) {
     }
 }
 
-
-
 function updateDuplicateValueDisplay(duplicateValue) {
     const duplicateValueElement = document.getElementById('duplicateValue');
     if (duplicateValueElement) {
-        duplicateValueElement.textContent = `Duplicate Value: ${duplicateValue}`;
+        duplicateValueElement.textContent = duplicateValue;
     }
 }
 
+function setDynamicPrices() {
+    const strawhatDupPriceElement = document.getElementById('strawhatDupPrice');
+    const emperorDupPriceElement = document.getElementById('emperorDupPrice');
+    const warlordDupPriceElement = document.getElementById('warlordDupPrice');
+    const admiralDupPriceElement = document.getElementById('admiralDupPrice');
+    const duplicatePrice = getDuplicatePrice();
 
-
+    if (strawhatDupPriceElement) {
+        strawhatDupPriceElement.textContent = duplicatePrice;
+    }
+    if (emperorDupPriceElement) {
+        emperorDupPriceElement.textContent = duplicatePrice;
+    }
+    if (warlordDupPriceElement) {
+        warlordDupPriceElement.textContent = duplicatePrice;
+    }
+    if (admiralDupPriceElement) {
+        admiralDupPriceElement.textContent = duplicatePrice;
+    }
+}

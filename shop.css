@@ -40,30 +40,70 @@ body {
     color: black;
 }
 
-.score{
+.scoreContainer{
     background-color: lightgrey;
+    padding: 1.5vw;
+    width: 6vw;
+    border-radius: 5vw;
+    position: absolute;
+    top: 4.5vw; 
+    right: 1.5vw;
+}
+
+.score{
     padding: 1vw;
     width: 6vw;
     border-radius: 5vw;
     position: absolute;
-    top: 3.5vw; 
-    left: 95vw;
-    transform: translateX(-50%);
+    top: 0vw; 
+    right: 0vw;
+    transform: translateY(-52%);
     text-align: center;
     color:#aa7918;
+    font-size: 30px;
 }
 
 .sCurrency{
     width:1.5vw;
     position: absolute;
     right: 6vw;
-    top: 4.8vw;
+    top: 0.3vw;
+}
+
+.duplicateContainer{
+    background-color: lightgrey;
+    padding: 1.5vw;
+    width: 6vw;
+    border-radius: 5vw;
+    position: absolute;
+    top: 8.5vw; 
+    right: 1.5vw;
+}
+
+.dupValue{
+    padding: 1vw;
+    width: 6vw;
+    border-radius: 5vw;
+    position: absolute;
+    top: 0vw; 
+    right: 0.2vw;
+    transform: translateY(-52%);
+    text-align: center;
+    color: #365499;
+    font-size: 30px;
+}
+
+.dupCurrency{
+    width:1.5vw;
+    position: absolute;
+    right: 6vw;
+    top: 0.3vw;
 }
 
 .packContainer {
     background-color: #9A7B4F;
     width: 50vw; /* Set width to half of the viewport width */
-    height: 100vh; /* Set height to fill the entire viewport height */
+    height: 172vh; /* Set height to fill the entire viewport height */
     position: absolute;
     top: 0;
     left: 50%;
@@ -75,45 +115,53 @@ body {
 }
 
 
-.strawhatCard{
-    width:10vW;
+.strawhatCard,
+.emperorCard,
+.warlordCard,
+.admiralCard {
+    width: 10vw;
     position: absolute;
     top: 1vw;
     left: 6vw;
     transform: translateX(-50%);
 }
 
-.strawhatContainer{
+.strawhatContainer,
+.emperorContainer,
+.warlordContainer,
+.admiralContainer {
     background-color: lightgray;
-    width:45vw;
-    height:16vw;
+    width: 45vw;
+    height: 16vw;
     position: absolute;
+    text-decoration: none;
+    color: inherit; /* Remove link color */
+}
+
+.strawhatContainer {
     top: 5vw;
     left: 2.5vw;
-    text-decoration: none;
-    color: inherit; /* Remove link color */
 }
 
-.emperorCard{
-    width:10vW;
-    position: absolute;
-    top: 1vw;
-    left: 6vw;
-    transform: translateX(-50%);
-}
-
-.emperorContainer{
-    background-color: lightgray;
-    width:45vw;
-    height:16vw;
-    position: absolute;
+.emperorContainer {
     top: 25vw;
     left: 2.5vw;
-    text-decoration: none;
-    color: inherit; /* Remove link color */
 }
 
-.sText{
+.warlordContainer {
+    top: 45vw; /* Adjust as needed for proper spacing */
+    left: 2.5vw;
+}
+
+.admiralContainer {
+    top: 65vw; /* Adjust as needed for proper spacing */
+    left: 2.5vw;
+}
+
+.sText,
+.eText,
+.wText,
+.aText {
     position: absolute;
     top: 3vw;
     left: 26.5vw;
@@ -121,53 +169,36 @@ body {
     text-align: center;
 }
 
-.eText{
+.currency {
+    width: 1.5vw;
     position: absolute;
-    top: 5vw;
-    left: 26.5vw;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.currency{
-    width:1.5vw;
-    position: absolute;
-    bottom:0.1vw;
+    bottom: 0.1vw;
     right: 4.3vw;
 }
 
-.price{
+.price {
     position: absolute;
     bottom: 0;
     right: 1vw;
     transform: translateY(50%);
     font-size: 25px;
-    color:#aa7918;
+    color: #aa7918;
 }
 
-.scoreTitle{
+.dCurrency {
+    width: 1.5vw;
     position: absolute;
-    top: 0;
-    left: 39.5vw;
-    transform: translateY(-50%);
-    font-size: 25px;
-    color:#aa7918;
-}
-
-.dCurrency{
-    width:1.5vw;
-    position: absolute;
-    bottom:0.1vw;
+    bottom: 0.1vw;
     right: 10.8vw;
 }
 
-.dPrice{
+.dPrice {
     position: absolute;
     bottom: 0;
     right: 8vw;
     transform: translateY(50%);
     font-size: 25px;
-    color:#aa7918;
+    color: #365499;
 }
 
 .button-container button {
@@ -180,19 +211,20 @@ body {
     cursor: pointer;
 }
 
-header{
+header {
     font-size: 40px;
     color: #B90E0A;
 }
-.details{
+
+.details {
     font-size: 20px;
     color: #DAA520;
 }
 
 @media (max-width: 900px) {
     .packContainer {
-        width: 70vw;
-        height: 97.5vh; 
+        width: 66vw;
+        height: 120.5vh; 
         position: absolute;
         top: 0;
         left: 50%;
@@ -203,52 +235,159 @@ header{
         z-index: 1; /* Set z-index to a lower value */
     }
 
-    .strawhatCard{
-        width:18vW;
+    .strawhatCard,
+    .emperorCard,
+    .warlordCard,
+    .admiralCard {
+        width: 18vw;
         position: absolute;
         top: 2.5vw;
         left: 12vw;
         transform: translateX(-50%);
     }
-    
-    .strawhatContainer{
+
+    .strawhatContainer,
+    .emperorContainer,
+    .warlordContainer,
+    .admiralContainer {
         background-color: lightgray;
-        width:64.5vw;
-        height:30vw;
+        width: 60.8vw;
+        height: 30vw;
         position: absolute;
-        top: 10vw;
-        left: 2.5vw;
         text-decoration: none;
         color: inherit; /* Remove link color */
     }
-    
-    .text{
+
+    .strawhatContainer {
+        top: 10vw;
+        left: 2.5vw;
+    }
+
+    .emperorContainer {
+        top: 48vw;
+        left: 2.5vw;
+    }
+
+    .warlordContainer {
+        top: 86vw; /* Adjust as needed for proper spacing */
+        left: 2.5vw;
+    }
+
+    .admiralContainer {
+        top: 124vw; /* Adjust as needed for proper spacing */
+        left: 2.5vw;
+    }
+
+    .sText,
+    .eText,
+    .wText,
+    .aText {
         position: absolute;
-        top: 8vw;
-        left: 43vw;
+        top: 5vw;
+        left: 40vw;
+        transform: translateX(-50%);
         text-align: center;
-        width: 42vw;
     }
-    
-    .currency{
-        width:2.5vw;
+
+    .currency {
+        width: 3vw;
         position: absolute;
-        top: 1.3vw;
-        left: 53.8vw;
+        bottom: 0.5vw;
+        right: 8.3vw;
     }
-    
-    .price{
+
+    .price {
         position: absolute;
-        transform: translate(300%,-20%);
-        font-size: 12px;
-        color:#aa7918;
+        bottom: 0;
+        right: 0.8vw;
+        transform: translateY(60%);
+        font-size: 15px;
+        color: #aa7918;
     }
-    header{
+
+    .dCurrency {
+        width: 3vw;
+        position: absolute;
+        bottom: 0.5vw;
+        right: 18.8vw;
+    }
+
+    .dPrice {
+        position: absolute;
+        bottom: 0;
+        right: 13.5vw;
+        transform: translateY(60%);
+        font-size: 15px;
+        color: #365499;
+    }
+
+    header {
         font-size: 15px;
         color: #B90E0A;
     }
-    .details{
+
+    .details {
         font-size: 12px;
         color: #DAA520;
+    }
+
+    .scoreContainer {
+        background-color: lightgrey;
+        padding: 3vw;
+        width: 8vw;
+        border-radius: 5vw;
+        position: absolute;
+        top: 8.5vw;
+        right: 2vw;
+    }
+
+    .score {
+        padding: 1vw;
+        width: 6vw;
+        border-radius: 5vw;
+        position: absolute;
+        top: 0vw;
+        right: 1.8vw;
+        transform: translateY(-47%);
+        text-align: center;
+        color: #aa7918;
+        font-size: 15px;
+    }
+
+    .sCurrency {
+        width: 3.5vw;
+        position: absolute;
+        right: 9.5vw;
+        top: 0.3vw;
+    }
+
+    .dupValue {
+        padding: 1vw;
+        width: 6vw;
+        border-radius: 5vw;
+        position: absolute;
+        top: 0vw;
+        right: 1.8vw;
+        transform: translateY(-47%);
+        text-align: center;
+        color: #365499;
+        font-size: 15px;
+    }
+
+    .dupCurrency {
+        width: 3.5vw;
+        position: absolute;
+        right: 9.5vw;
+        top: 0.3vw;
+    }
+
+    .duplicateContainer {
+        background-color: lightgrey;
+        padding: 3vw;
+        width: 8vw;
+        border-radius: 5vw;
+        position: absolute;
+        top: 15.5vw;
+        right: 2vw;
     }
 }

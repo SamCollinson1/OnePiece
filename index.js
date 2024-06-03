@@ -71,11 +71,11 @@ fetch('OP_names.txt')
 
 function initializePage() {
     score = getScore();
-    document.getElementById("score").textContent = `Score: ${score}`;
+    document.getElementById("score").textContent = score;
     const optionsContainer = document.getElementById('options');
     optionsContainer.innerHTML = ''; // Clear existing options
     chooseCharacter();
-    document.getElementById("score").textContent = `Score: ${score}`;
+    document.getElementById("score").textContent = score;
     for (const character in characters) {
         if (characters.hasOwnProperty(character)) {
             const option = document.createElement('div');
@@ -237,7 +237,7 @@ function addDetails() {
             if (chosenCharacter && selectedCharacter in chosenCharacter) {
                 score += correctCount * 20;
                 updateScore(score);
-                document.getElementById('score').textContent = `Score: ${score}`;
+                document.getElementById('score').textContent = score;
                 showWinMessage(selectedCharacter);
                 createPlayAgainButton();
                 disableInput();
@@ -480,6 +480,13 @@ let spacing = 12;
 function revealClue() {
     const clueButton = document.getElementById("clueButton");
     const clueList = document.getElementById("cluesList");
+    const score = getScore(); // Get the current score
+
+    if (score < 50) {
+        alert("Not enough score to reveal a clue!"); // Alert the user
+        return; // Exit the function if score is less than 50
+    }
+
     if (chosenCharacter) {
         const randomCategory = getRandomCategory();
         if (randomCategory) {
@@ -495,13 +502,14 @@ function revealClue() {
                 revealedClues.push(category);
                 score -= 50;
                 updateScore(score);
-                spacing += 2;
+                spacing += 4;
             } else {
                 revealClue(); // Try to reveal another clue if this one is already revealed
             }            
         }
     }
 }
+
 
 function getRandomCategory() {
     const randomIndex = Math.floor(Math.random() * wrongCategories.length);
@@ -529,7 +537,7 @@ function calculatePenalty(details) {
 function updateScore(newScore) {
     score = newScore;
     console.log(score);
-    document.getElementById("score").textContent = `Score: ${score}`;
+    document.getElementById("score").textContent = score;
     saveScore(score); // Save the updated score to Local Storage
 }
 

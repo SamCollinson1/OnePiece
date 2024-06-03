@@ -20,8 +20,13 @@
         <div id="options" class="dropDown" style="display: none;"></div>
     </div>
     <div>
-        <p class="guesstext" id="guesstext">Guesses Left: 6</p>
-        <p class="score" id="score">Score: </p>
+        <div class = "guessBox">
+            <p class="guesstext" id="guesstext">Guesses Left: 6</p>
+        </div>
+        <div class = "scoreContainer">
+            <p class="score" id="score"></p>
+            <img src="images/currency.png" class="sCurrency">
+        </div>
         <button id="revealCategoryBtn" class = "clueButton" onclick="revealClue()">Clue (-50)</button>
         <ul id="cluesList" class = cluesList></ul>
     </div>

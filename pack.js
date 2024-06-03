@@ -1,4 +1,17 @@
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem('pageRefreshed', 'true');
+});
+
 document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('pageRefreshed') === 'true') {
+        localStorage.removeItem('pageRefreshed');
+        window.location.href = 'shop.html';
+    } else {
+        fetchCharacterData();
+    }
+});
+
+function fetchCharacterData() {
     const urlParams = new URLSearchParams(window.location.search);
     const packId = urlParams.get('packId');
     console.log(packId);
@@ -9,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(obtainedCards)
     console.log(duplicateValue)
 
-
     fetch('chances.json')
         .then(response => {
             if (!response.ok) {
@@ -18,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            console.log('Fetched character data:', data); // Log fetched data
             if (!data || !data.defaultChances) {
                 throw new Error('Invalid character data format');
             }
@@ -39,8 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return data.strawhatPack;
             case 'emperorsPack':
                 return data.emperorsPack;
-            case 'warlordsPack':
-                return data.warlordsPack;
+            case 'admiralPack':
+                return data.admiralPack;
+            case 'warlordPack':
+                return data.warlordPack;
             default:
                 return null;
         }
@@ -113,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
         duplicateValue += isPackCharacter ? 15 : 2;
     }
     
-
     function hasObtainedCard(cardName) {
         return obtainedCards.includes(cardName);
     }
@@ -141,7 +153,5 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('obtainedCards');
         localStorage.removeItem('duplicateValue');
     }
+};
 
-    // Reset obtainedCards and duplicateValue when needed
-    // Call resetLocalStorage() function when you want to reset
-});
