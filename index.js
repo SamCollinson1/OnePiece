@@ -36,9 +36,9 @@ orderArcs = {
     26: "Punk Hazard",
     27: "Dressrosa",
     28: "Zou",
-    29: "Whole Cake Island",
+    29: "WholeCake Island",
     30: "Reverie",
-    31: "Wano Country"
+    31: "Wano"
 }
 
 
@@ -209,24 +209,30 @@ function addDetails() {
                                 addCell.classList.add("uparrow");
                             }
                         }
-                        if(index === 7){
-                            chosenArcNum = 0;
-                            guessArcNum = 0;
+                        if (index === 7) {
+                            var chosenArcNum = 0;
+                            var guessArcNum = 0;
                             for (var arcNumber in orderArcs) {
-                                if(chosenCharacterArc == orderArcs[arcNumber]){
-                                    chosenArcNum = arcNumber;
+                                let num = 0;
+                                if (chosenCharacterArc === orderArcs[arcNumber]) {
+                                    chosenArcNum = parseInt(arcNumber); // Convert string to integer
                                 }
-                                if(details.arc == orderArcs[arcNumber]){
-                                    guessArcNum = arcNumber;
+                                console.log(arcNumber)
+                                if (details.arc === orderArcs[arcNumber]) {
+                                    guessArcNum = parseInt(arcNumber); // Convert string to integer
                                 }
+                                num++;
                                 
                             }
-                            if(chosenArcNum < guessArcNum){
+                            console.log(chosenArcNum);
+                            console.log(guessArcNum);
+                            if (chosenArcNum < guessArcNum) {
                                 addCell.classList.add("downarrow");
-                            }else if(chosenArcNum > guessArcNum){
+                            } else if (chosenArcNum > guessArcNum) {
                                 addCell.classList.add("uparrow");
                             }
                         }
+                        
                     }
                 }
 
