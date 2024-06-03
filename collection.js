@@ -45,6 +45,7 @@ function getPackCharacters(affiliation, affiliations, chances) {
 
 
 function displayCollection(allCharacters, obtainedCards, affiliations, chances) {
+    resetCollection();
     const collectionContainer = document.getElementById('collectionContainer');
     collectionContainer.innerHTML = ''; // Clear previous content
 
