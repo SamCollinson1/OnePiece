@@ -87,3 +87,4 @@ Kawamatsu|Male|Kozuki Family|None|41|0|2m71|Wano|Alive
 Ashura|Male|Kozuki Family|None|56|0|5m44|Wano|Deceased
 Shinobu|Female|Kozuki Family|Paramecia|49|0|1m80|Wano|Alive
 Izou|Male|Whitebeard Pirates|None|45|510M|1m92|Wano|Deceased
+Burgess|Male|Blackbeard Pirates|Paramecia|29|20M|Jaya|Alive
